@@ -6,6 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from 'react'
 import { IoMdTimer } from "react-icons/io";
+import { MdOutlineWindow } from "react-icons/md";
 import { MdOutlineCategory } from "react-icons/md";
 import { CgListTree } from "react-icons/cg";
 import { TbListCheck } from "react-icons/tb";
@@ -32,6 +33,16 @@ export function AppSidebar() {
                                 <IoMdTimer className="h-5 w-5" />
                             </ListItemPrefix>
                             Dashboard
+                        </ListItem>
+                    </Link>
+
+                    <Link to="/product">
+                        <ListItem onClick={() => setActiveLink('product')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                            ${activeLink === "product" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
+                            <ListItemPrefix>
+                                <MdOutlineWindow className="h-5 w-5" />
+                            </ListItemPrefix>
+                            Products
                         </ListItem>
                     </Link>
 
