@@ -5,7 +5,7 @@ import { FaArrowTrendDown } from "react-icons/fa6";
 const Overview = () => {
     return (
         <div>
-            <div className="grid grid-cols-1 xl:grid-cols-4 gap-10 mt-5">
+            <div className="grid grid-cols-4 gap-10 mt-5">
                 <div className='bg-white p-5 rounded-xl'>
                     <ul className='flex justify-between'>
                         <li className='flex flex-col gap-2'>

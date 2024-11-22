@@ -71,7 +71,7 @@ const GridView = () => {
                                             Rs. {item.price}
                                         </Typography>
                                         <Typography color="blue-gray" className="flex items-center justify-center gap-1 font-normal font-custom text-secondary">
-                                            {item.rating}<FaStar color='#FFCA28' />
+                                            {item.rating}<FaStar className='text-ratingBg' />
                                         </Typography>
                                     </div>
                                     <div className='space-y-1'>

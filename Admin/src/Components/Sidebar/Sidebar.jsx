@@ -4,19 +4,49 @@ import {
     ListItemPrefix,
     Card
 } from "@material-tailwind/react";
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoMdTimer } from "react-icons/io";
 import { MdOutlineWindow } from "react-icons/md";
 import { MdOutlineCategory } from "react-icons/md";
 import { CgListTree } from "react-icons/cg";
 import { TbListCheck } from "react-icons/tb";
 import { RiCouponLine } from "react-icons/ri";
-import { PiUsers } from "react-icons/pi";
+import { PiUsersBold } from "react-icons/pi";
 import { TbFileInvoice } from "react-icons/tb";
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom";
 
 export function AppSidebar() {
-    const [activeLink, setActiveLink] = useState("dashboard")
+
+    const location = useLocation();
+    const [activeLink, setActiveLink] = useState(() => {
+        // Dynamically set the initial state based on the current path 
+        // it is used for avoiding sudden display of initially "dashboard" path before showing current path or page where user on,
+        const path = location.pathname;
+        if (path === "/") return "dashboard";
+        if (path === "/product") return "product";
+        if (path === "/addProduct") return "product";
+        if (path === "/category") return "category";
+        if (path === "/subcategory") return "subcategory";
+        if (path === "/orderlist") return "orderlist";
+        if (path === "/coupon") return "coupon";
+        if (path === "/userslist") return "userslist";
+        if (path === "/invoice") return "invoice";
+        return "dashboard"; // Fallback to "dashboard" for unknown paths
+    });
+
+    // Update active link based on the current path, used for show current page that user on after refresh
+    useEffect(() => {
+        const path = location.pathname;
+        if (path === "/") setActiveLink("dashboard");
+        else if (path === "/product") setActiveLink("product");
+        else if (path === "/addProduct") setActiveLink("product");
+        else if (path === "/category") setActiveLink("category");
+        else if (path === "/subcategory") setActiveLink("subcategory");
+        else if (path === "/orderlist") setActiveLink("orderlist");
+        else if (path === "/coupon") setActiveLink("coupon");
+        else if (path === "/userslist") setActiveLink("userslist");
+        else if (path === "/invoice") setActiveLink("invoice");
+    }, [location]);
     return (
         <>
             <Card className="hidden lg:block h-screen lg:w-64 pt-4 shadow-none rounded-none">
@@ -89,7 +119,7 @@ export function AppSidebar() {
                         <ListItem onClick={() => setActiveLink('userslist')} className={`text-secondary text-base transition-all duration-300 ease-in-out
                             ${activeLink === "userslist" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
-                                <PiUsers className="h-5 w-5" />
+                                <PiUsersBold className="h-5 w-5" />
                             </ListItemPrefix>
                             User's List
                         </ListItem>

@@ -6,8 +6,6 @@ import { GoBellFill } from "react-icons/go";
 import { LanguageSelector } from "./Language";
 import { IoIosSearch } from "react-icons/io";
 import Profile from "./Profile";
-import { MdOutlineMenu } from "react-icons/md";
-import { MobileSidebar } from "../Sidebar/MobileSidebar";
 
 
 export function AppNavbar() {
@@ -38,16 +36,8 @@ export function AppNavbar() {
                             <li><Profile /></li>
                         </ul>
                     </div>
-
-                    <div className='block lg:hidden p-0'>
-                        <ul className='flex items-center justify-between'>
-                            <li className='text-logo font-bold tracking-wider'>URBAAN</li>
-                            <li className='text-secondary text-3xl' onClick={openDrawer}><MdOutlineMenu /></li>
-                        </ul>
-                    </div>
                 </Navbar>
             </div>
-            <MobileSidebar open={open} closeDrawer={closeDrawer} className='block lg:hidden'/>
         </>
     );
 }

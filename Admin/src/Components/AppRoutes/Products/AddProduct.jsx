@@ -1,6 +1,34 @@
-import React from 'react'
+import { Button } from '@material-tailwind/react';
+import React, { useState } from 'react'
+import { FaPlus } from 'react-icons/fa6';
+import { IoMdCloudUpload } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
+import { FaCircle } from "react-icons/fa";
 
 const AddProduct = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [color, setColor] = useState("#FFFFFF");
+    const [showColorPicker, setShowColorPicker] = useState(false);
+
+    // image selecter
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imageUrl = URL.createObjectURL(file);
+            setSelectedImage(imageUrl);
+        }
+    };
+
+    // color selecter
+    const handleColorSelecter = (e) => {
+        setColor(e.target.value);
+    }
+
+    // to hide input defualt color picker
+    const toggleColorPicker = () => {
+        setShowColorPicker(!showColorPicker); // toggle visibility of color picker
+    };
+
     return (
         <>
             <h1 className='text-2xl lg:text-3xl font-semibold'>Create Product</h1>
@@ -89,6 +117,145 @@ const AddProduct = () => {
                                 ></textarea>
                             </div>
                         </form>
+                    </div>
+                </div>
+
+                {/* second col */}
+                {/* photo upload */}
+                <div className='bg-white rounded-xl shadow-md p-5 space-y-5'>
+                    <div className='flex gap-5'>
+                        <div className="flex flex-col justify-center items-center w-72 h-44 border-4 border-dashed border-primary rounded-xl">
+                            {!selectedImage ? (
+                                <>
+                                    <input
+                                        type="file"
+                                        id="file"
+                                        className="hidden"
+                                        accept="image/*"
+                                        onChange={handleFileChange}
+                                    />
+                                    <label
+                                        htmlFor="file"
+                                        className="flex flex-col items-center cursor-pointer"
+                                    >
+                                        <IoMdCloudUpload className="text-primary text-5xl" />
+                                        <p className="text-secondary text-sm">Browse files to upload</p>
+                                    </label>
+                                </>
+                            ) : (
+                                <img
+                                    src={selectedImage}
+                                    alt="Uploaded"
+                                    className="w-full h-full rounded-lg"
+                                />
+                            )}
+                        </div>
+
+                        <ul className='flex-1 space-y-2'>
+                            <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
+                                <div className='w-[30px] h-[30px]'>
+                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                </div>
+                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
+                            </li>
+                            <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
+                                <div className='w-[30px] h-[30px]'>
+                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                </div>
+                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
+                            </li>
+                            <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
+                                <div className='w-[30px] h-[30px]'>
+                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                </div>
+                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
+                            </li>
+                            <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
+                                <div className='w-[30px] h-[30px]'>
+                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                </div>
+                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* manufacter name */}
+                    <div className='flex flex-col gap-1'>
+                        <label htmlFor="" className='font-normal'>Manufacturer Name</label>
+                        <input type="text" name="name" id="" placeholder='Enter Manufacturer Name' className='border-[1px] 
+                        bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
+                            focus:outline-none'/>
+                    </div>
+
+                    {/* manufacter brand */}
+                    <div className='flex flex-col gap-1'>
+                        <label htmlFor="" className='font-normal'>Manufacturer Brand</label>
+                        <input type="text" name="name" id="" placeholder='Enter Manufacturer Brand' className='border-[1px] 
+                        bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
+                            focus:outline-none'/>
+                    </div>
+
+                    {/* color */}
+                    <div>
+                        <label htmlFor="" className='font-normal'>Colour</label>
+                        <div className='flex items-center gap-2 mt-2'>
+                            <div className='w-full border-2 h-12 rounded-lg'>
+                                <p className='rounded-lg text-secondary/50  flex justify-center items-center focus:outline-none h-full' style={{ backgroundColor: color }}>{color}</p>
+                            </div>
+                            <div className="border-primary rounded-md w-full border-2 text-primary font-custom tracking-wider flex items-center justify-center gap-2 px-3 py-2 cursor-pointer relative">
+                                <input
+                                    type="color"
+                                    value={color}
+                                    onChange={handleColorSelecter}
+                                    name="colorPicker"
+                                    id="colorPicker"
+                                    className="w-full bg-transparent absolute opacity-0 pointer-events-none"
+                                />
+                                <label
+                                    htmlFor="colorPicker"
+                                    className="flex items-center gap-1 cursor-pointer"
+                                    onClick={() => document.getElementById('colorPicker').click()}
+                                >
+                                    <FaPlus /> Add Color
+                                </label>
+                            </div>
+                        </div>
+                        <ul className='mt-5 flex items-center gap-3'>
+                            <li className='cursor-pointer'><FaCircle className='text-3xl text-green-400' /></li>
+                            <li className='cursor-pointer'><FaCircle className='text-3xl text-red-400' /></li>
+                            <li className='cursor-pointer'><FaCircle className='text-3xl text-yellow-400' /></li>
+                            <li className='cursor-pointer'><FaCircle className='text-3xl text-blue-400' /></li>
+                        </ul>
+                    </div>
+
+                    {/* size */}
+                    <div>
+                        <h3 className='text-secondary text-base'>Size</h3>
+                        <ul className='mt-2 flex items-center gap-2'>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>XS</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>S</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>M</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>L</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>XL</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>2XL</li>
+                            <li className='border-2 border-gray-300 w-7 h-7 flex items-center 
+                            justify-center rounded-md text-xs cursor-pointer hover:bg-primary hover:text-white hover:border-primary'>3XL</li>
+                        </ul>
+                    </div>
+
+                    {/* button */}
+                    <div className='flex justify-center items-center mt-2'>
+                        <Button className='bg-buttonBg font-custom font-normal tracking-wider'>submit product</Button>
                     </div>
                 </div>
             </div>

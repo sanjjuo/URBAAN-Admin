@@ -43,7 +43,7 @@ const ORDERS = [
 const RecentOrders = () => {
     return (
         <>
-            <Card className="hidden lg:block h-full w-full p-10">
+            <Card className="h-full w-full p-10">
                 <div>
                     <ul className='flex items-center justify-between'>
                         <li className="text-2xl font-medium text-secondary">Recent Orders</li>

@@ -107,7 +107,7 @@ const ListView = () => {
                                                     color="blue-gray"
                                                     className="font-normal font-custom flex items-center gap-1"
                                                 >
-                                                    <FaStar color='#FFCA28' />{item.rating}
+                                                    <FaStar className='text-ratingBg' />{item.rating}
                                                 </Typography>
                                             </td>
                                             <td className={classes}>

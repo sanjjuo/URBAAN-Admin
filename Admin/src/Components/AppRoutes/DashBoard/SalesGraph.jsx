@@ -7,12 +7,12 @@ import { MonthMenu } from './MonthMenu';
 const SalesGraph = () => {
     return (
         <>
-            <div className='p-5 xl:p-10 mt-10 bg-white rounded-xl shadow-md'>
-                <div className="flex flex-col justify-center lg:flex-row items-center lg:justify-between">
+            <div className='p-10 mt-10 bg-white rounded-xl shadow-md'>
+                <div className="flex items-center justify-between">
                     <div>
-                        <h1 className="text-2xl font-medium mb-3 lg:mb-0 text-secondary">Sales Details</h1>
+                        <h1 className="text-2xl font-medium mb-0 text-secondary">Sales Details</h1>
                     </div>
-                    <ul className="flex items-center gap-2 lg:gap-5">
+                    <ul className="flex items-center gap-5">
                         <li><PlaceMenu /></li>
                         <li><MonthMenu /></li>
                     </ul>
