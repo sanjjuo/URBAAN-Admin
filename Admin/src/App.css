@@ -1,0 +1,12 @@
+*{
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom border style for ReactFlagsSelect */
+.react-flag-select {
+  border: none !important;
+  outline: none !important;
+}
