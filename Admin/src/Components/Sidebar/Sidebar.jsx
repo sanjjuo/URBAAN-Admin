@@ -55,9 +55,9 @@ export function AppSidebar() {
                         <img src="/logo.png" alt="" className='w-full object-contain' />
                     </div>
                 </div>
-                <List className='mt-14 px-4'>
+                <List className='mt-14 px-4 space-y-1'>
                     <Link to="/">
-                        <ListItem onClick={() => setActiveLink('dashboard')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('dashboard')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "dashboard" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <IoMdTimer className="h-5 w-5" />
@@ -67,7 +67,7 @@ export function AppSidebar() {
                     </Link>
 
                     <Link to="/product">
-                        <ListItem onClick={() => setActiveLink('product')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('product')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "product" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <MdOutlineWindow className="h-5 w-5" />
@@ -77,7 +77,7 @@ export function AppSidebar() {
                     </Link>
 
                     <Link to='/category'>
-                        <ListItem onClick={() => setActiveLink('category')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('category')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "category" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <MdOutlineCategory className="h-5 w-5" />
@@ -86,7 +86,7 @@ export function AppSidebar() {
                         </ListItem>
                     </Link>
                     <Link to='/subcategory'>
-                        <ListItem onClick={() => setActiveLink('subcategory')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('subcategory')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "subcategory" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <CgListTree className="h-5 w-5" />
@@ -96,7 +96,7 @@ export function AppSidebar() {
                     </Link>
 
                     <Link to='/orderlist'>
-                        <ListItem onClick={() => setActiveLink('orderlist')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('orderlist')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "orderlist" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <TbListCheck className="h-5 w-5" />
@@ -106,7 +106,7 @@ export function AppSidebar() {
                     </Link>
 
                     <Link to='/coupon'>
-                        <ListItem onClick={() => setActiveLink('coupon')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('coupon')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "coupon" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <RiCouponLine className="h-5 w-5" />
@@ -116,7 +116,7 @@ export function AppSidebar() {
                     </Link>
 
                     <Link to='/userslist'>
-                        <ListItem onClick={() => setActiveLink('userslist')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('userslist')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "userslist" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <PiUsersBold className="h-5 w-5" />
@@ -126,7 +126,7 @@ export function AppSidebar() {
 
                     </Link>
                     <Link to='/invoice'>
-                        <ListItem onClick={() => setActiveLink('invoice')} className={`text-secondary text-base transition-all duration-300 ease-in-out
+                        <ListItem onClick={() => setActiveLink('invoice')} className={`text-secondary bg-gray-100 text-base transition-all duration-300 ease-in-out
                             ${activeLink === "invoice" ? "!bg-primary text-white py-6 focus:!text-white" : "bg-none"}`}>
                             <ListItemPrefix>
                                 <TbFileInvoice className="h-5 w-5" />

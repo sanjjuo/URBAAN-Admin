@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const TABLE_HEAD = ["Product Name", "Stock", "Rate", "Price", "Orders", "Publish", "Action"];
 const TABLE_ROWS = [
     {
-        img: "/crop.jpg",
+        img: "/p1.jpg",
         product: "Crop Top",
         stock: "12",
         rating: "4.9",
@@ -17,7 +17,7 @@ const TABLE_ROWS = [
         publish: "12 jan 2025"
     },
     {
-        img: "/crop.jpg",
+        img: "/p2.jpg",
         product: "Crop Top",
         stock: "12",
         rating: "4.9",
@@ -26,7 +26,7 @@ const TABLE_ROWS = [
         publish: "12 jan 2025"
     },
     {
-        img: "/crop.jpg",
+        img: "/p3.jpg",
         product: "Crop Top",
         stock: "12",
         rating: "4.9",
@@ -35,7 +35,7 @@ const TABLE_ROWS = [
         publish: "12 jan 2025"
     },
     {
-        img: "/crop.jpg",
+        img: "/p1.jpg",
         product: "Crop Top",
         stock: "12",
         rating: "4.9",

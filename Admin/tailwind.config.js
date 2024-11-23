@@ -19,6 +19,7 @@ module.exports = withMT({
         buttonBg: "#4880FF",
         ratingBg: "#FFCA28",
         deleteBg: "#F44336",
+        editBg: "#E2EBF8",
         O1: "#8280FF",
         O2: "#FEC53D",
         O3: "#4AD991",

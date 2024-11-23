@@ -32,7 +32,7 @@ const AddProduct = () => {
     return (
         <>
             <h1 className='text-2xl lg:text-3xl font-semibold'>Create Product</h1>
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 mt-5">
+            <div className="grid lg:grid-cols-2 gap-10 mt-5">
                 <div className='bg-white rounded-xl shadow-md'>
                     <div className='p-5'>
                         <h2 className="text-xl font-medium mb-3 lg:mb-0 text-secondary">Product Information</h2>
@@ -121,6 +121,7 @@ const AddProduct = () => {
                 </div>
 
                 {/* second col */}
+
                 {/* photo upload */}
                 <div className='bg-white rounded-xl shadow-md p-5 space-y-5'>
                     <div className='flex gap-5'>
@@ -204,7 +205,8 @@ const AddProduct = () => {
                         <label htmlFor="" className='font-normal'>Colour</label>
                         <div className='flex items-center gap-2 mt-2'>
                             <div className='w-full border-2 h-12 rounded-lg'>
-                                <p className='rounded-lg text-secondary/50  flex justify-center items-center focus:outline-none h-full' style={{ backgroundColor: color }}>{color}</p>
+                                <p className='rounded-lg text-secondary/50  flex justify-center items-center focus:outline-none h-full' 
+                                    style={{ backgroundColor: color }}>{color}</p>
                             </div>
                             <div className="border-primary rounded-md w-full border-2 text-primary font-custom tracking-wider flex items-center justify-center gap-2 px-3 py-2 cursor-pointer relative">
                                 <input

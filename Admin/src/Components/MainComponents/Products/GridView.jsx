@@ -17,7 +17,7 @@ const GridView = () => {
     const product = [
         {
             id: "1",
-            img: "/crop.jpg",
+            img: "/p1.jpg",
             product: "Stylish Crop Top",
             rating: "4.9",
             price: "500",
@@ -28,7 +28,7 @@ const GridView = () => {
         },
         {
             id: "2",
-            img: "/crop2.jpg",
+            img: "/p2.jpg",
             product: "Stylish Crop Top",
             rating: "4.1",
             price: "400",
@@ -39,7 +39,7 @@ const GridView = () => {
         },
         {
             id: "3",
-            img: "/crop.jpg",
+            img: "/p3.jpg",
             product: "Stylish Crop Top",
             rating: "4.5",
             price: "500",
@@ -53,7 +53,7 @@ const GridView = () => {
         <>
             <div className='space-y-5'>
             <Link to='/addProduct'><Button className='flex items-center gap-1 bg-buttonBg font-custom font-normal'><FaPlus />Add product</Button></Link>
-                <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
                     {
                         product.map((item, index) => (
                             <Card className="w-full cursor-default group" key={index}>

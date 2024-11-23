@@ -12,7 +12,7 @@ const TABLE_HEAD = ["Product Name", "Location", "Date", "Piece", "Amount", "Stat
 
 const ORDERS = [
     {
-        img: "/crop.jpg",
+        img: "/p1.jpg",
         product: "Stylish Crop Top",
         location: "Texas",
         date: "23/04/18",
@@ -21,8 +21,8 @@ const ORDERS = [
         status: "delivered", // Updated status
     },
     {
-        img: "/crop2.jpg",
-        product: "Stylish Crop Top",
+        img: "/p2.jpg",
+        product: "Violet Crop Top",
         location: "California",
         date: "10/04/24",
         piece: "423",
@@ -30,8 +30,8 @@ const ORDERS = [
         status: "pending", // Updated status
     },
     {
-        img: "/crop.jpg",
-        product: "Stylish Crop Top",
+        img: "/p3.jpg",
+        product: "Traditional Kurti",
         location: "California",
         date: "10/04/24",
         piece: "423",
