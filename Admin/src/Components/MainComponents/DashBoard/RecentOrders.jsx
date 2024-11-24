@@ -4,7 +4,6 @@ import {
     Typography,
     CardBody,
     Chip,
-    Avatar,
 } from "@material-tailwind/react";
 import { MonthMenu } from './MonthMenu';
 
@@ -36,7 +35,7 @@ const ORDERS = [
         date: "10/04/24",
         piece: "423",
         amount: "600",
-        status: "rejected", // Updated status
+        status: "cancelled", // Updated status
     },
 ];
 
@@ -51,18 +50,17 @@ const RecentOrders = () => {
                     </ul>
                 </div>
                 <CardBody className="p-0 mt-10">
-                    <table className="mt-0 w-full min-w-max table-auto text-center shadow-none border-none">
-                        <thead className='bg-quaternary shadow-md'>
+                    <table className="mt-0 w-full min-w-max table-auto text-left shadow-none border-none">
+                        <thead className='bg-quaternary'>
                             <tr>
                                 {TABLE_HEAD.map((head) => (
                                     <th
                                         key={head}
-                                        className="p-4 w-40"
+                                        className="p-4"
                                     >
                                         <Typography
                                             variant="small"
-                                            color="blue-gray"
-                                            className="leading-none font-custom text-base font-semibold text-secondary"
+                                            className="leading-none uppercase font-custom text-base font-semibold text-secondary"
                                         >
                                             {head}
                                         </Typography>
@@ -76,16 +74,17 @@ const RecentOrders = () => {
                                     const isLast = index === ORDERS.length - 1;
                                     const classes = isLast
                                         ? "p-4"
-                                        : "p-4"
+                                        : "p-4 border-b border-gray-300"
 
                                     return (
                                         <tr key={index}>
                                             <td className={classes}>
-                                                <div className="flex items-center gap-3">
-                                                    <Avatar src={item.img} alt={item.product} size="md" className/>
+                                                <div className="flex items-center gap-2">
+                                                    <div className='w-[60px] h-[60px] rounded-md'>
+                                                        <img src={item.img} alt={item.product} className='w-full h-full object-cover rounded-md' />
+                                                    </div>
                                                     <Typography
                                                         variant="small"
-                                                        color="blue-gray"
                                                         className="font-normal font-custom"
                                                     >
                                                         {item.product}
@@ -95,7 +94,6 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.location}
@@ -104,7 +102,6 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.date}
@@ -113,7 +110,6 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.piece}
@@ -122,30 +118,27 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
-                                                    Rs. {item.amount}
+                                                    ₹{item.amount}
                                                 </Typography>
                                             </td>
-                                            <td className='p-4 flex justify-center items-center'>
-                                                <div className="w-max">
+                                            <td className={classes}>
                                                     <Chip
-                                                        variant="ghost"
-                                                        size="sm"
-                                                        className='font-custom capitalize font-normal text-sm w-24 text-center tracking-wider rounded-md'
+                                                        className={`
+                                                            ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-sm text-center font-normal" : ""}
+                                                            ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-sm text-center font-normal" : ""}
+                                                            ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-sm text-center font-normal" : ""}
+                                                            ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-sm text-center font-normal" : ""}
+                                                            ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-sm text-center font-normal" : ""}
+                                                            ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-sm text-center font-normal" : ""}
+                                                          `}
                                                         value={
                                                             item.status === "delivered" ? "Delivered" :
-                                                            item.status === "pending" ? "Pending" : 
-                                                            item.status === "rejected" ? "Rejected" : "Unknown"
-                                                        }
-                                                        color={
-                                                            item.status === "delivered" ? "green" :
-                                                            item.status === "pending" ? "orange" :
-                                                            item.status === "rejected" ? "red" : "gray"
+                                                            item.status === "pending" ? "Pending" :
+                                                            item.status === "cancelled" ? "Cancelled" : "Unknown"
                                                         }
                                                     />
-                                                </div>
                                             </td>
                                         </tr>
                                     );

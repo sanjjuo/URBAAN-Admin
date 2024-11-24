@@ -68,7 +68,7 @@ const GridView = () => {
                                 <CardBody className='p-4'>
                                     <div className="mb-2 flex items-center justify-between">
                                         <Typography color="blue-gray" className="font-semibold font-custom text-primary">
-                                            Rs. {item.price}
+                                        ₹{item.price}
                                         </Typography>
                                         <Typography color="blue-gray" className="flex items-center justify-center gap-1 font-normal font-custom text-secondary">
                                             {item.rating}<FaStar className='text-ratingBg' />

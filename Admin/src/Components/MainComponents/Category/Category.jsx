@@ -30,13 +30,13 @@ const Category = () => {
         {/* Search and Added Categories Section */}
         <div className="lg:col-span-4 space-y-5">
           {/* Search Bar */}
-          <div className="border border-gray-300 py-1 px-2 flex items-center gap-2 rounded-xl bg-gray-100/50 h-10 w-96">
-            <IoIosSearch className="text-gray-500 text-xl" />
+          <div className="border border-gray-300 py-1 px-2 flex items-center gap-2 rounded-xl bg-white h-14 w-96">
+            <IoIosSearch className="text-gray-700 text-2xl" />
             <input
               type="search"
               name="search"
               placeholder="Search Category"
-              className="bg-transparent placeholder:text-gray-500 placeholder:text-sm font-light focus:outline-none text-secondary w-full"
+              className="bg-transparent placeholder:text-gray-700 placeholder:text-md font-light focus:outline-none text-secondary w-full"
             />
           </div>
 

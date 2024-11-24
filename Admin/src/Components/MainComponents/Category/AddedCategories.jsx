@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa6';
+import { AppContext } from '../../../StoreContext/StoreContext';
+import { DeleteModal } from '../../DeleteModal/DeleteModal';
 
 const AddedCategories = () => {
+    const { open, handleOpen } = useContext(AppContext)
     const addedCategories = [
         {
             id: "1",
@@ -58,7 +61,7 @@ const AddedCategories = () => {
                                  hover:bg-buttonBg hover:text-editBg">
                                 Edit
                             </button>
-                            <button className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
+                            <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
                                  hover:bg-primary hover:text-white">
                                 Delete
                             </button>
@@ -78,6 +81,8 @@ const AddedCategories = () => {
                     </Link>
                 </div>
             ))}
+
+            <DeleteModal open={open} handleOpen={handleOpen}/>
         </>
     );
 };

@@ -62,8 +62,7 @@ const ListView = () => {
                                         >
                                             <Typography
                                                 variant="small"
-                                                color="blue-gray"
-                                                className="font-medium text-secondary text-base leading-none font-custom"
+                                                className="font-semibold uppercase text-secondary text-base leading-none font-custom"
                                             >
                                                 {head}
                                             </Typography>
@@ -74,18 +73,17 @@ const ListView = () => {
                             <tbody>
                                 {TABLE_ROWS.map((item, index) => {
                                     const isLast = index === TABLE_ROWS.length - 1;
-                                    const classes = isLast ? "p-4" : "p-4";
+                                    const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
 
                                     return (
                                         <tr key={index}>
                                             <td className={classes}>
                                                 <div className='flex items-center gap-2'>
-                                                    <div className='w-[50px] h-[50px] rounded-md'>
+                                                    <div className='w-[60px] h-[60px] rounded-md'>
                                                         <img src={item.img} alt={item.product} className='w-full h-full object-cover rounded-md' />
                                                     </div>
                                                     <Typography
                                                         variant="small"
-                                                        color="blue-gray"
                                                         className="font-normal font-custom"
                                                     >
                                                         {item.product}
@@ -95,7 +93,6 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.stock}
@@ -104,7 +101,6 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom flex items-center gap-1"
                                                 >
                                                     <FaStar className='text-ratingBg' />{item.rating}
@@ -113,16 +109,14 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
-                                                    Rs. {item.price}
+                                                    ₹{item.price}
                                                 </Typography>
                                             </td>
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.orders}
@@ -131,7 +125,6 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     {item.publish}
@@ -140,7 +133,6 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    color="blue-gray"
                                                     className="font-normal font-custom"
                                                 >
                                                     <HiOutlineDotsHorizontal />

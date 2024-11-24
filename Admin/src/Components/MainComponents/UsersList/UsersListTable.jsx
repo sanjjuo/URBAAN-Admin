@@ -1,55 +1,66 @@
 import React, { useContext } from 'react'
-import { Card, Typography, CardFooter, Button, IconButton } from "@material-tailwind/react";
+import { Button, Card, CardFooter, Chip, IconButton, Typography } from "@material-tailwind/react";
 import { AppContext } from '../../../StoreContext/StoreContext';
 import { DeleteModal } from '../../DeleteModal/DeleteModal';
 
-const TABLE_HEAD = ["Sub Category", "Category", "Status", "Action"];
+const TABLE_HEAD = ["user name", "mobile", "address", "city", "district", "state", "pincode", "Action"];
 
 const TABLE_ROWS = [
     {
-        subcategory: "Kurti",
-        category: "Kurti",
-        status: "enabled"
+        name: "arya nair",
+        mobile: "9845464142",
+        address: "089 kutch green apt.448",
+        city: "kochi",
+        district: "ernakulam",
+        state: "Kerala",
+        pincode: "682001"
     },
     {
-        subcategory: "Kurti Set",
-        category: "Kurti",
-        status: "disabled"
+        name: "alex",
+        mobile: "7902501645",
+        address: "089 kutch green apt.448",
+        city: "mankada",
+        district: "malappuram",
+        state: "Kerala",
+        pincode: "679324"
     },
     {
-        subcategory: "Ethnic Wear",
-        category: "Kurti",
-        status: "enabled"
+        name: "sneha pillai",
+        mobile: "9945464142",
+        address: "089 kutch green apt.448",
+        city: "mannarkkad",
+        district: "palakkad",
+        state: "Kerala",
+        pincode: "682501"
     },
     {
-        subcategory: "Leggings",
-        category: "Bottom",
-        status: "enabled"
-    },
-    {
-        subcategory: "Pallazo",
-        category: "Bottom",
-        status: "disabled"
+        name: "mary",
+        mobile: "7845464142",
+        address: "089 kutch green apt.448",
+        city: "nadakkavu",
+        district: "kozhikode",
+        state: "Kerala",
+        pincode: "675901"
     },
 ];
 
-const AddedSubCategories = () => {
+
+const UsersListTable = () => {
     const { open, handleOpen } = useContext(AppContext)
     return (
         <>
             <Card className="h-full w-full shadow-none bg-transparent">
                 <table className="w-full min-w-max table-auto text-left">
-                    <thead className='bg-white bg-transparent'>
+                    <thead>
                         <tr className='bg-white'>
                             {TABLE_HEAD.map((head) => (
                                 <th
                                     key={head}
-                                    className="border-b border-blue-gray-100 p-4 w-40"
+                                    className="border-b border-blue-gray-100 p-4"
                                 >
                                     <Typography
                                         variant="small"
-                                        color="blue-gray"
-                                        className="font-semibold uppercase font-custom text-base leading-none text-secondary"
+                                        className="font-semibold font-custom text-secondary leading-none text-base uppercase"
                                     >
                                         {head}
                                     </Typography>
@@ -57,51 +68,77 @@ const AddedSubCategories = () => {
                             ))}
                         </tr>
                     </thead>
-                    <tbody className='bg-transparent'>
+                    <tbody>
                         {TABLE_ROWS.map((item, index) => {
                             const isLast = index === TABLE_ROWS.length - 1;
                             const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
 
                             return (
-                                <tr key={index} className="bg-transparent">
+                                <tr key={index}>
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            color="blue-gray"
-                                            className="font-normal font-custom"
+                                            className="font-normal capitalize font-custom text-secondary"
                                         >
-                                            {item.subcategory}
+                                            {item.name}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            color="blue-gray"
-                                            className="font-normal font-custom"
+                                            className="font-normal capitalize font-custom text-secondary"
                                         >
-                                            {item.category}
+                                            {item.mobile}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            color={item.status === "enabled" ? "green" :
-                                                item.status === "disabled" ? "red" : ""
-                                            }
-                                            className="font-normal font-custom"
+                                            className="font-normal capitalize font-custom text-secondary"
                                         >
-                                            {item.status === "enabled" ? "Enabled" :
-                                                item.status === "disabled" ? "Disabled" : ""}
+                                            {item.address}
+                                        </Typography>
+                                    </td>
+                                    <td className={classes}>
+                                        <Typography
+                                            variant="small"
+                                            className="font-normal capitalize font-custom text-secondary"
+                                        >
+                                            {item.city}
+                                        </Typography>
+                                    </td>
+                                    <td className={classes}>
+                                        <Typography
+                                            variant="small"
+                                            className="font-normal capitalize font-custom text-secondary"
+                                        >
+                                            {item.district}
+                                        </Typography>
+                                    </td>
+                                    <td className={classes}>
+                                        <Typography
+                                            variant="small"
+                                            className="font-normal capitalize font-custom text-secondary"
+                                        >
+                                            {item.state}
+                                        </Typography>
+                                    </td>
+                                    <td className={classes}>
+                                        <Typography
+                                            variant="small"
+                                            className="font-normal font-custom text-secondary"
+                                        >
+                                            {item.pincode}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
                                         <div className="flex gap-2 text-sm">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-buttonBg hover:text-editBg">
+                                            hover:bg-buttonBg hover:text-editBg">
                                                 Edit
                                             </button>
                                             <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-primary hover:text-white">
+                                            hover:bg-primary hover:text-white">
                                                 Delete
                                             </button>
                                         </div>
@@ -114,7 +151,7 @@ const AddedSubCategories = () => {
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
                     text-sm cursor-pointer hover:bg-black hover:text-white'>
-                        Prev. page
+                        Prev. Page
                     </Button>
                     <div className="flex items-center gap-2">
                         <IconButton variant="outlined" size="sm">
@@ -141,7 +178,7 @@ const AddedSubCategories = () => {
                     </div>
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
                     cursor-pointer hover:bg-black hover:text-white'>
-                        Next page
+                        Next Page
                     </Button>
                 </CardFooter>
             </Card>
@@ -150,4 +187,4 @@ const AddedSubCategories = () => {
     )
 }
 
-export default AddedSubCategories
+export default UsersListTable
