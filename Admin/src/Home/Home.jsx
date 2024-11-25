@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppSidebar } from '../components/Sidebar/Sidebar';
-import { AppNavbar } from '../components/Navbar/Navbar';
 import { Outlet } from "react-router-dom";
+import { AppSidebar } from '../Components/Sidebar/Sidebar';
+import { AppNavbar } from '../Components/Navbar/Navbar';
 
 const Home = () => {
     return (
