@@ -60,7 +60,7 @@ const RecentOrders = () => {
                                     >
                                         <Typography
                                             variant="small"
-                                            className="leading-none uppercase font-custom text-base font-semibold text-secondary"
+                                            className="leading-none uppercase font-custom text-sm font-semibold text-secondary"
                                         >
                                             {head}
                                         </Typography>
@@ -85,7 +85,7 @@ const RecentOrders = () => {
                                                     </div>
                                                     <Typography
                                                         variant="small"
-                                                        className="font-normal font-custom"
+                                                        className="font-normal font-custom text-xs"
                                                     >
                                                         {item.product}
                                                     </Typography>
@@ -94,7 +94,7 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.location}
                                                 </Typography>
@@ -102,7 +102,7 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.date}
                                                 </Typography>
@@ -110,7 +110,7 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.piece}
                                                 </Typography>
@@ -118,7 +118,7 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     ₹{item.amount}
                                                 </Typography>
@@ -126,12 +126,12 @@ const RecentOrders = () => {
                                             <td className={classes}>
                                                     <Chip
                                                         className={`
-                                                            ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                            ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                            ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                            ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                            ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                            ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-sm text-center font-normal" : ""}
+                                                            ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                            ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                            ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                            ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                            ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                            ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
                                                           `}
                                                         value={
                                                             item.status === "delivered" ? "Delivered" :

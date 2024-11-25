@@ -70,7 +70,7 @@ const OrderTable = () => {
                 >
                   <Typography
                     variant="small"
-                    className="font-semibold font-custom text-secondary leading-none text-base uppercase"
+                    className="font-semibold font-custom text-secondary leading-none text-sm uppercase"
                   >
                     {head}
                   </Typography>
@@ -88,7 +88,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.id}
                     </Typography>
@@ -96,7 +96,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.customer}
                     </Typography>
@@ -104,7 +104,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.address}
                     </Typography>
@@ -112,7 +112,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.deliveryDate}
                     </Typography>
@@ -120,7 +120,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.product}
                     </Typography>
@@ -128,7 +128,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.size}
                     </Typography>
@@ -136,7 +136,7 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Typography
                       variant="small"
-                      className="font-normal font-custom text-secondary"
+                      className="font-normal font-custom text-xs"
                     >
                       {item.payment}
                     </Typography>
@@ -144,12 +144,12 @@ const OrderTable = () => {
                   <td className={classes}>
                     <Chip
                       className={`
-                    ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-sm text-center font-normal" : ""}
-                    ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-sm text-center font-normal" : ""}
-                    ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-sm text-center font-normal" : ""}
-                    ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-sm text-center font-normal" : ""}
-                    ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-sm text-center font-normal" : ""}
-                    ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-sm text-center font-normal" : ""}
+                    ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-xs text-center font-normal" : ""}
+                    ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-xs text-center font-normal" : ""}
+                    ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-xs text-center font-normal" : ""}
+                    ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
+                    ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-xs text-center font-normal" : ""}
+                    ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
                   `}
                       value={
                         item.status === "delivered" ? "Delivered" :
@@ -168,7 +168,7 @@ const OrderTable = () => {
         </table>
         <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
           <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
-                    text-sm cursor-pointer hover:bg-black hover:text-white'>
+                    text-xs cursor-pointer hover:bg-black hover:text-white'>
             Prev. Date
           </Button>
           <div className="flex items-center gap-2">
@@ -194,7 +194,7 @@ const OrderTable = () => {
               10
             </IconButton>
           </div>
-          <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
+          <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-xs 
                     cursor-pointer hover:bg-black hover:text-white'>
             Next Date
           </Button>

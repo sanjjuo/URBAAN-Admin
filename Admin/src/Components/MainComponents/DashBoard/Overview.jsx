@@ -16,7 +16,7 @@ const Overview = () => {
                             <img src="/group.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
-                    <p className='flex items-center gap-2 mt-8'><FaArrowTrendUp className='text-O3' />
+                    <p className='flex items-center gap-2 mt-8 text-sm'><FaArrowTrendUp className='text-O3' />
                         <strong className='text-O3 font-normal'>8.5 %</strong> Up from yesterday</p>
                 </div>
                 <div className='bg-white p-5 rounded-xl'>
@@ -29,7 +29,7 @@ const Overview = () => {
                             <img src="/box.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
-                    <p className='flex items-center gap-2 mt-8'><FaArrowTrendUp className='text-O3' />
+                    <p className='flex items-center gap-2 mt-8 text-sm'><FaArrowTrendUp className='text-O3' />
                         <strong className='text-O3 font-normal'>8.5 %</strong> Up from yesterday</p>
                 </div>
                 <div className='bg-white p-5 rounded-xl'>
@@ -42,7 +42,7 @@ const Overview = () => {
                             <img src="/box.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
-                    <p className='flex items-center gap-2 mt-8'><FaArrowTrendDown className='text-O4' />
+                    <p className='flex items-center gap-2 mt-8 text-sm'><FaArrowTrendDown className='text-O4' />
                         <strong className='text-O4 font-normal'>8.5 %</strong> Up from yesterday</p>
                 </div>
                 <div className='bg-white p-5 rounded-xl'>
@@ -55,7 +55,7 @@ const Overview = () => {
                             <img src="/chart.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
-                    <p className='flex items-center gap-2 mt-8'><FaArrowTrendDown className='text-O4' />
+                    <p className='flex items-center gap-2 mt-8 text-sm'><FaArrowTrendDown className='text-O4' />
                         <strong className='text-O4 font-normal'>8.5 %</strong> Up from yesterday</p>
                 </div>
             </div>

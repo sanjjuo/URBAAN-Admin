@@ -35,14 +35,14 @@ const AddProduct = () => {
             <div className="grid lg:grid-cols-2 gap-10 mt-5">
                 <div className='bg-white rounded-xl shadow-md'>
                     <div className='p-5'>
-                        <h2 className="text-xl font-medium mb-3 lg:mb-0 text-secondary">Product Information</h2>
+                        <h2 className="text-lg font-medium mb-3 lg:mb-0 text-secondary">Product Information</h2>
                     </div>
                     <hr />
                     <div className='p-5'>
                         <form action="" className='space-y-5'>
                             {/* title */}
                             <div className='flex flex-col gap-1'>
-                                <label htmlFor="" className='font-normal'>Product title</label>
+                                <label htmlFor="" className='font-normal text-sm'>Product title</label>
                                 <input type="text" name="name" id="" placeholder='Enter Product title' className='border-[1px] 
                                     bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
                                      focus:outline-none'/>
@@ -50,10 +50,10 @@ const AddProduct = () => {
                             {/* category */}
                             <div className='flex justify-between items-center gap-2'>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className="font-normal">Product Category</label>
+                                    <label className='font-normal text-sm'>Product Category</label>
                                     <select
                                         name="selectField"
-                                        className="w-full bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
+                                        className="w-full text-sm text-gray-500 font-light bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
                                     >
                                         <option value="Option 1">Kurti</option>
                                         <option value="Option 2">Maternity Wear</option>
@@ -61,10 +61,10 @@ const AddProduct = () => {
                                     </select>
                                 </div>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className="font-normal">Sub Category</label>
+                                    <label className='font-normal text-sm'>Sub Category</label>
                                     <select
                                         name="selectField"
-                                        className="w-full bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
+                                        className="w-full text-sm text-gray-500 font-light bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
                                     >
                                         <option value="Option 1">Ethnic Wear</option>
                                         <option value="Option 2">Comfy Wear</option>
@@ -75,10 +75,10 @@ const AddProduct = () => {
                             {/* price */}
                             <div className='flex justify-between items-center gap-2'>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className="font-normal">Actual Price</label>
+                                    <label className='font-normal text-sm'>Actual Price</label>
                                     <select
                                         name="selectField"
-                                        className="w-full bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
+                                        className="w-full text-sm text-gray-500 font-light bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
                                     >
                                         <option value="Option 1">Rs. 1000</option>
                                         <option value="Option 2">Rs. 2500</option>
@@ -86,10 +86,10 @@ const AddProduct = () => {
                                     </select>
                                 </div>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className="font-normal">Discount (%)</label>
+                                    <label className='font-normal text-sm'>Discount (%)</label>
                                     <select
                                         name="selectField"
-                                        className="w-full bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
+                                        className="w-full text-sm text-gray-500 font-light bg-gray-100/50 border p-2 rounded focus:outline-none focus:cursor-pointer"
                                     >
                                         <option value="Option 1">50%</option>
                                         <option value="Option 2">25%</option>
@@ -99,14 +99,14 @@ const AddProduct = () => {
                             </div>
                             {/* offer price */}
                             <div className='flex flex-col gap-1'>
-                                <label htmlFor="" className='font-normal'>Offer Price</label>
+                                <label htmlFor="" className='font-normal text-sm'>Offer Price</label>
                                 <input type="text" name="name" id="" placeholder='Rs. 500' className='border-[1px] 
                                     bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
                                      focus:outline-none'/>
                             </div>
                             {/* description */}
                             <div className='flex flex-col gap-1'>
-                                <label htmlFor="" className='font-normal'>Product Description</label>
+                                <label htmlFor="" className='font-normal text-sm'>Product Description</label>
                                 <textarea
                                     name="description"
                                     rows="5"
@@ -140,7 +140,7 @@ const AddProduct = () => {
                                         className="flex flex-col items-center cursor-pointer"
                                     >
                                         <IoMdCloudUpload className="text-primary text-5xl" />
-                                        <p className="text-secondary text-sm">Browse files to upload</p>
+                                        <p className="text-secondary text-xs">Browse files to upload</p>
                                     </label>
                                 </>
                             ) : (
@@ -155,30 +155,30 @@ const AddProduct = () => {
                         <ul className='flex-1 space-y-2'>
                             <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
                                 <div className='w-[30px] h-[30px]'>
-                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                    <img src="/p1.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
                                 </div>
-                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <p className='text-secondary font-normal text-xs'>Stylish Crop top</p>
                                 <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
                             </li>
                             <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
                                 <div className='w-[30px] h-[30px]'>
-                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                    <img src="/p1.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
                                 </div>
-                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <p className='text-secondary font-normal text-xs'>Stylish Crop top</p>
                                 <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
                             </li>
                             <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
                                 <div className='w-[30px] h-[30px]'>
-                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                    <img src="/p1.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
                                 </div>
-                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <p className='text-secondary font-normal text-xs'>Stylish Crop top</p>
                                 <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
                             </li>
                             <li className='flex items-center justify-between bg-primary/15 rounded-md p-1'>
                                 <div className='w-[30px] h-[30px]'>
-                                    <img src="/crop.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
+                                    <img src="/p1.jpg" alt="" className='w-full h-full object-cover rounded-md shadow-md' />
                                 </div>
-                                <p className='text-secondary font-normal text-sm'>Stylish Crop top</p>
+                                <p className='text-secondary font-normal text-xs'>Stylish Crop top</p>
                                 <MdDelete className='text-deleteBg text-lg cursor-pointer hover:text-primary' />
                             </li>
                         </ul>
@@ -186,7 +186,7 @@ const AddProduct = () => {
 
                     {/* manufacter name */}
                     <div className='flex flex-col gap-1'>
-                        <label htmlFor="" className='font-normal'>Manufacturer Name</label>
+                        <label htmlFor="" className='font-normal text-sm'>Manufacturer Name</label>
                         <input type="text" name="name" id="" placeholder='Enter Manufacturer Name' className='border-[1px] 
                         bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
                             focus:outline-none'/>
@@ -194,7 +194,7 @@ const AddProduct = () => {
 
                     {/* manufacter brand */}
                     <div className='flex flex-col gap-1'>
-                        <label htmlFor="" className='font-normal'>Manufacturer Brand</label>
+                        <label htmlFor="" className='font-normal text-sm'>Manufacturer Brand</label>
                         <input type="text" name="name" id="" placeholder='Enter Manufacturer Brand' className='border-[1px] 
                         bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
                             focus:outline-none'/>
@@ -202,10 +202,10 @@ const AddProduct = () => {
 
                     {/* color */}
                     <div>
-                        <label htmlFor="" className='font-normal'>Colour</label>
+                        <label htmlFor="" className='font-normal text-sm'>Colour</label>
                         <div className='flex items-center gap-2 mt-2'>
                             <div className='w-full border-2 h-12 rounded-lg'>
-                                <p className='rounded-lg text-secondary/50  flex justify-center items-center focus:outline-none h-full' 
+                                <p className='rounded-lg text-secondary/50 text-sm  flex justify-center items-center focus:outline-none h-full' 
                                     style={{ backgroundColor: color }}>{color}</p>
                             </div>
                             <div className="border-primary rounded-md w-full border-2 text-primary font-custom tracking-wider flex items-center justify-center gap-2 px-3 py-2 cursor-pointer relative">

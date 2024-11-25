@@ -60,7 +60,7 @@ const UsersListTable = () => {
                                 >
                                     <Typography
                                         variant="small"
-                                        className="font-semibold font-custom text-secondary leading-none text-base uppercase"
+                                        className="font-semibold font-custom text-secondary leading-none text-sm uppercase"
                                     >
                                         {head}
                                     </Typography>
@@ -78,7 +78,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.name}
                                         </Typography>
@@ -86,7 +86,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.mobile}
                                         </Typography>
@@ -94,7 +94,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.address}
                                         </Typography>
@@ -102,7 +102,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.city}
                                         </Typography>
@@ -110,7 +110,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.district}
                                         </Typography>
@@ -118,7 +118,7 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.state}
                                         </Typography>
@@ -126,13 +126,13 @@ const UsersListTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.pincode}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-sm">
+                                        <div className="flex gap-2 text-xs">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
                                             hover:bg-buttonBg hover:text-editBg">
                                                 Edit
@@ -150,7 +150,7 @@ const UsersListTable = () => {
                 </table>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
-                    text-sm cursor-pointer hover:bg-black hover:text-white'>
+                    text-xs cursor-pointer hover:bg-black hover:text-white'>
                         Prev. Page
                     </Button>
                     <div className="flex items-center gap-2">
@@ -176,7 +176,7 @@ const UsersListTable = () => {
                             10
                         </IconButton>
                     </div>
-                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
+                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-xs 
                     cursor-pointer hover:bg-black hover:text-white'>
                         Next Page
                     </Button>

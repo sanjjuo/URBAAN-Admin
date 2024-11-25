@@ -59,7 +59,7 @@ const InvoiceTable = () => {
                                 >
                                     <Typography
                                         variant="small"
-                                        className="font-semibold font-custom text-secondary leading-none text-base uppercase"
+                                        className="font-semibold font-custom text-secondary leading-none text-sm uppercase"
                                     >
                                         {head}
                                     </Typography>
@@ -77,7 +77,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.paymentId}
                                         </Typography>
@@ -85,7 +85,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.customer}
                                         </Typography>
@@ -93,7 +93,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.mobile}
                                         </Typography>
@@ -101,7 +101,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.date}
                                         </Typography>
@@ -109,7 +109,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.size}
                                         </Typography>
@@ -117,7 +117,7 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             ₹{item.amount}
                                         </Typography>
@@ -125,10 +125,10 @@ const InvoiceTable = () => {
                                     <td className={classes}>
                                         <Chip
                                             className={`
-                                                ${item.status === "unpaid" ? "text-processingBg bg-processingBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                ${item.status === "paid" ? "text-shippedBg bg-shippedBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                ${item.status === "refund" ? "text-pendingBg bg-pendingBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                ${!["unpaid", "paid", "refund"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-sm text-center font-normal" : ""}
+                                                ${item.status === "unpaid" ? "text-processingBg bg-processingBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                ${item.status === "paid" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                ${item.status === "refund" ? "text-pendingBg bg-pendingBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                ${!["unpaid", "paid", "refund"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
                                                     `}
                                             value={
                                                 item.status === "unpaid" ? "unpaid" :
@@ -139,7 +139,7 @@ const InvoiceTable = () => {
                                         />
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-sm">
+                                        <div className="flex gap-2 text-xs">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
                                             hover:bg-buttonBg hover:text-editBg">
                                                 Edit
@@ -157,7 +157,7 @@ const InvoiceTable = () => {
                 </table>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
-                    text-sm cursor-pointer hover:bg-black hover:text-white'>
+                    text-xs cursor-pointer hover:bg-black hover:text-white'>
                         Prev. Page
                     </Button>
                     <div className="flex items-center gap-2">
@@ -183,7 +183,7 @@ const InvoiceTable = () => {
                             10
                         </IconButton>
                     </div>
-                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
+                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-xs 
                     cursor-pointer hover:bg-black hover:text-white'>
                         Next Page
                     </Button>

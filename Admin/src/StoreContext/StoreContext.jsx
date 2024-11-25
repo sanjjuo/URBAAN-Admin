@@ -3,9 +3,9 @@ import React, { createContext, useState } from 'react'
 export const AppContext = createContext();
 
 const StoreContext = ({ children }) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(null);
 
-    const handleOpen = () => setOpen(!open);
+    const handleOpen = (modal) => setOpen(modal);
     return (
         <>
             <AppContext.Provider value={{

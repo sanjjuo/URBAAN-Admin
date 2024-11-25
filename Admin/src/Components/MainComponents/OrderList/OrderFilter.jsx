@@ -36,12 +36,12 @@ const OrderFilter = () => {
     return (
         <>
             <ul className="flex items-center gap-1 text-secondary">
-                <li className="bg-white border-[1px] border-gray-300 rounded-full p-1 w-14 h-14 flex items-center justify-center">
+                <li className="bg-white border-[1px] border-gray-300 rounded-full p-1 w-12 h-12 flex items-center justify-center">
                     <ImFilter />
                 </li>
-                <li className="bg-white font-normal border-[1px] border-gray-300 rounded-xl p-1 w-24 h-14 flex items-center justify-center">Filter By</li>
+                <li className="bg-white font-normal text-sm border-[1px] border-gray-300 rounded-xl p-1 w-24 h-12 flex items-center justify-center">Filter by</li>
                 {dropdownData.map(({ label, options, onSelect }, index) => (
-                    <li key={index} className='bg-white font-normal border-[1px] border-gray-300 rounded-xl p-1 w-40 h-14 flex items-center justify-center'>
+                    <li key={index} className='bg-white font-normal border-[1px] border-gray-300 rounded-xl p-1 w-40 h-12 flex items-center justify-center'>
                         <Menu placement="bottom-end">
                             <MenuHandler>
                                 <Button
@@ -65,7 +65,7 @@ const OrderFilter = () => {
                         </Menu>
                     </li>
                 ))}
-                <li className="bg-white cursor-pointer font-normal border-[1px] border-gray-300 rounded-xl p-1 w-32 h-14 flex items-center justify-center gap-1
+                <li className="bg-white cursor-pointer font-normal text-sm border-[1px] border-gray-300 rounded-xl p-1 w-32 h-12 flex items-center justify-center gap-1
                      text-red-500 hover:text-primary" onClick={handleReset}>
                     <PiArrowCounterClockwiseBold />
                     Reset Filter

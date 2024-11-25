@@ -19,10 +19,10 @@ export function AppNavbar() {
                 <Navbar className="mx-auto p-4 lg:py-2 lg:px-10 shadow-none rounded-none">
                     <div className='hidden lg:flex items-center justify-between'>
                         <ul className='w-[350px]'>
-                            <li className='border-[1px] border-gray-300 py-1 px-2 flex items-center gap-2 rounded-xl bg-gray-100/50 w-full h-10'>
+                            <li className='border-[1px] border-gray-300 py-1 px-2 flex items-center gap-1 rounded-xl bg-gray-100/50 w-full h-10'>
                                 <IoIosSearch className='text-gray-600 text-xl' />
                                 <input type="search" name="search" id="" placeholder='Search' className='bg-transparent 
-                     placeholder:text-gray-600 placeholder:text-base font-light focus:outline-none text-secondary w-full'/>
+                     placeholder:text-gray-600 placeholder:text-sm font-light focus:outline-none text-secondary w-full'/>
                             </li>
                         </ul>
                         <ul className='flex items-center gap-5'>

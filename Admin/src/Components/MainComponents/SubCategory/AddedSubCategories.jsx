@@ -49,7 +49,7 @@ const AddedSubCategories = () => {
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-semibold uppercase font-custom text-base leading-none text-secondary"
+                                        className="font-semibold uppercase font-custom text-sm leading-none text-secondary"
                                     >
                                         {head}
                                     </Typography>
@@ -68,7 +68,7 @@ const AddedSubCategories = () => {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal font-custom"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.subcategory}
                                         </Typography>
@@ -77,7 +77,7 @@ const AddedSubCategories = () => {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal font-custom"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.category}
                                         </Typography>
@@ -88,14 +88,14 @@ const AddedSubCategories = () => {
                                             color={item.status === "enabled" ? "green" :
                                                 item.status === "disabled" ? "red" : ""
                                             }
-                                            className="font-normal font-custom"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.status === "enabled" ? "Enabled" :
                                                 item.status === "disabled" ? "Disabled" : ""}
                                         </Typography>
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-sm">
+                                        <div className="flex gap-2 text-xs">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
                                  hover:bg-buttonBg hover:text-editBg">
                                                 Edit
@@ -113,7 +113,7 @@ const AddedSubCategories = () => {
                 </table>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
-                    text-sm cursor-pointer hover:bg-black hover:text-white'>
+                    text-xs cursor-pointer hover:bg-black hover:text-white'>
                         Prev. page
                     </Button>
                     <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ const AddedSubCategories = () => {
                             10
                         </IconButton>
                     </div>
-                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
+                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-xs 
                     cursor-pointer hover:bg-black hover:text-white'>
                         Next page
                     </Button>

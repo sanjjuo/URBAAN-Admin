@@ -41,7 +41,7 @@ export function LanguageSelector() {
                     <Button
                         size="sm"
                         className="hidden shadow-none items-center gap-2 lg:flex bg-transparent text-secondary font-custom capitalize
-                        font-normal text-sm hover:shadow-none focus:outline-none"
+                        font-normal text-xs outline-none hover:shadow-none focus:outline-none"
                     >
                         <Flag code={lang} className="w-6 h-4" /> {/* Display the selected flag icon */}
                         {countries.find(({ code }) => code === lang)?.name}
@@ -55,7 +55,7 @@ export function LanguageSelector() {
                     {countries.map(({ code, name }) => (
                         <MenuItem
                             key={name}
-                            className="flex items-center gap-2 font-custom"
+                            className="flex items-center gap-2 font-custom text-xs"
                             onClick={() => setLang(code)} // Set flag code on selection
                         >
                             <Flag code={code} className="w-6 h-4" /> {/* Display the flag icon */}

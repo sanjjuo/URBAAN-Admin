@@ -6,14 +6,14 @@ const CreateCategories = ({ selectedImage, handlImageUpload }) => {
         <>
             <div className='bg-white rounded-xl shadow-md sticky top-5 transition-all duration-300 ease-in-out'>
                 <div className='p-5'>
-                    <h2 className="text-xl font-medium mb-3 lg:mb-0 text-secondary">Create Categories</h2>
+                    <h2 className="text-lg font-medium mb-3 lg:mb-0 text-secondary">Create Categories</h2>
                 </div>
                 <hr />
                 <div className='p-5'>
                     <form action="" className='space-y-5'>
                         {/* title */}
                         <div className='flex flex-col gap-1'>
-                            <label htmlFor="" className='font-normal'>Category title</label>
+                            <label htmlFor="" className='font-normal text-sm'>Category title</label>
                             <input type="text" name="name" id="" placeholder='Other Accessories' className='border-[1px] 
                                     bg-gray-100/50 p-2 rounded-md placeholder:text-sm placeholder:font-light placeholder:text-gray-500
                                      focus:outline-none'/>
@@ -21,7 +21,7 @@ const CreateCategories = ({ selectedImage, handlImageUpload }) => {
 
                         {/* image upload */}
                         <div>
-                            <label htmlFor="" className='font-normal'>Image</label>
+                            <label htmlFor="" className='font-normal text-sm'>Image</label>
                             <div className='w-full h-48 flex justify-center items-center border-2 rounded-xl mt-2'>
                                 {!selectedImage ? (
                                     <>
@@ -37,7 +37,7 @@ const CreateCategories = ({ selectedImage, handlImageUpload }) => {
                                             className="flex flex-col items-center cursor-pointer"
                                         >
                                             <img src="/imgupload.png" alt="" className='w-16' />
-                                            <p className="text-secondary text-sm">Browse files to upload</p>
+                                            <p className="text-secondary text-xs">Browse files to upload</p>
                                         </label>
                                     </>
                                 ) : (
@@ -51,7 +51,7 @@ const CreateCategories = ({ selectedImage, handlImageUpload }) => {
                         </div>
                         {/* description */}
                         <div className='flex flex-col gap-1'>
-                            <label htmlFor="" className='font-normal'>Product Description</label>
+                            <label htmlFor="" className='font-normal text-sm'>Product Description</label>
                             <textarea
                                 name="description"
                                 rows="5"

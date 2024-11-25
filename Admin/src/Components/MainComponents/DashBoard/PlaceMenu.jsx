@@ -20,8 +20,8 @@ export function PlaceMenu() {
     return (
         <Menu placement="bottom-end" open={openMenu} handler={setOpenMenu}>
             <MenuHandler>
-                <Button className="cursor-pointer flex items-center gap-5 font-custom bg-transparent text-gray-700 capitalize text-sm font-normal
-                border-gray-400 border-[1px] shadow-none rounded-md px-2 lg:py-1 py-2 focus:shadow-none focus:outline-none">
+                <Button className="cursor-pointer flex items-center gap-5 font-custom bg-transparent text-gray-700 capitalize text-xs font-normal
+                border-gray-400 border-[1px] shadow-none rounded-md px-2 lg:py-1 py-2 focus:shadow-none focus:outline-none hover:shadow-none outline-none">
                     {selectedPlace} {/* Display selected place */}
                     <ChevronDownIcon
                         strokeWidth={2.5}
@@ -34,7 +34,7 @@ export function PlaceMenu() {
                     <MenuItem 
                         key={place}
                         onClick={() => handleMenuItemClick(place)} 
-                        className="font-custom"
+                        className="font-custom text-xs"
                     >
                         {place}
                     </MenuItem>

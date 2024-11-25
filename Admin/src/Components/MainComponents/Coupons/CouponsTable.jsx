@@ -64,7 +64,7 @@ const CouponsTable = () => {
                                 >
                                     <Typography
                                         variant="small"
-                                        className="font-semibold font-custom text-secondary leading-none text-base uppercase"
+                                        className="font-semibold font-custom text-secondary leading-none text-sm uppercase"
                                     >
                                         {head}
                                     </Typography>
@@ -82,7 +82,7 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.discount}
                                         </Typography>
@@ -90,7 +90,7 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal capitalize font-custom text-secondary"
+                                            className="font-normal capitalize font-custom text-xs"
                                         >
                                             {item.couponTitle}
                                         </Typography>
@@ -98,7 +98,7 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.code}
                                         </Typography>
@@ -106,7 +106,7 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.startDate}
                                         </Typography>
@@ -114,7 +114,7 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Typography
                                             variant="small"
-                                            className="font-normal font-custom text-secondary"
+                                            className="font-normal font-custom text-xs"
                                         >
                                             {item.endDate}
                                         </Typography>
@@ -122,9 +122,9 @@ const CouponsTable = () => {
                                     <td className={classes}>
                                         <Chip
                                             className={`
-                                                 ${item.status === "expired" ? "text-cancelBg bg-cancelBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                 ${item.status === "active" ? "text-shippedBg bg-shippedBg/20 capitalize text-sm text-center font-normal" : ""}
-                                                 ${!["expired", "active"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-sm text-center font-normal" : ""}
+                                                 ${item.status === "expired" ? "text-cancelBg bg-cancelBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                 ${item.status === "active" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
+                                                 ${!["expired", "active"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
                                                     `}
                                             value={
                                                 item.status === "expired" ? "Expired" :
@@ -134,7 +134,7 @@ const CouponsTable = () => {
                                         />
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-sm">
+                                        <div className="flex gap-2 text-xs">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
                                  hover:bg-buttonBg hover:text-editBg">
                                                 Edit
@@ -152,7 +152,7 @@ const CouponsTable = () => {
                 </table>
                 <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize 
-                    text-sm cursor-pointer hover:bg-black hover:text-white'>
+                    text-xs cursor-pointer hover:bg-black hover:text-white'>
                         Prev. Page
                     </Button>
                     <div className="flex items-center gap-2">
@@ -178,7 +178,7 @@ const CouponsTable = () => {
                             10
                         </IconButton>
                     </div>
-                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-sm 
+                    <Button variant="outlined" size="sm" className='font-custom border-gray-300 font-normal capitalize text-xs 
                     cursor-pointer hover:bg-black hover:text-white'>
                         Next Page
                     </Button>

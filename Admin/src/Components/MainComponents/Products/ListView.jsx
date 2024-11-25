@@ -62,7 +62,7 @@ const ListView = () => {
                                         >
                                             <Typography
                                                 variant="small"
-                                                className="font-semibold uppercase text-secondary text-base leading-none font-custom"
+                                                className="font-semibold uppercase text-secondary text-sm leading-none font-custom"
                                             >
                                                 {head}
                                             </Typography>
@@ -84,7 +84,7 @@ const ListView = () => {
                                                     </div>
                                                     <Typography
                                                         variant="small"
-                                                        className="font-normal font-custom"
+                                                        className="font-normal font-custom text-xs"
                                                     >
                                                         {item.product}
                                                     </Typography>
@@ -93,7 +93,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.stock}
                                                 </Typography>
@@ -101,7 +101,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom flex items-center gap-1"
+                                                    className="font-normal font-custom text-xs flex items-center gap-1"
                                                 >
                                                     <FaStar className='text-ratingBg' />{item.rating}
                                                 </Typography>
@@ -109,7 +109,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     ₹{item.price}
                                                 </Typography>
@@ -117,7 +117,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.orders}
                                                 </Typography>
@@ -125,7 +125,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     {item.publish}
                                                 </Typography>
@@ -133,7 +133,7 @@ const ListView = () => {
                                             <td className={classes}>
                                                 <Typography
                                                     variant="small"
-                                                    className="font-normal font-custom"
+                                                    className="font-normal font-custom text-xs"
                                                 >
                                                     <HiOutlineDotsHorizontal />
                                                 </Typography>
