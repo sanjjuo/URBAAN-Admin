@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { PlaceMenu } from './PlaceMenu';
-import { MonthMenu } from './MonthMenu';
+import MonthMenu from './MonthMenu';
 
 
 const SalesGraph = () => {
@@ -12,7 +12,7 @@ const SalesGraph = () => {
                     <div>
                         <h1 className="text-2xl font-medium mb-0 text-secondary">Sales Details</h1>
                     </div>
-                    <ul className="flex items-center gap-5">
+                    <ul className="flex items-center gap-2">
                         <li><PlaceMenu /></li>
                         <li><MonthMenu /></li>
                     </ul>

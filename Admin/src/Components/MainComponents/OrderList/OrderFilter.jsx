@@ -1,37 +1,11 @@
 import React, { useState } from 'react';
 import { ImFilter } from "react-icons/im";
 import { PiArrowCounterClockwiseBold } from "react-icons/pi";
-import { Button, Menu, MenuHandler, MenuItem, MenuList } from '@material-tailwind/react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import FilterDate from '../../FilterDate/FilterDate';
+import FilterCategory from '../../FilterCategory/FilterCategory';
+import { FilterOrderStatus } from '../../FilterOrderStatus/FilterOrderStatus';
 
 const OrderFilter = () => {
-    const [selectedDate, setSelectedDate] = useState("14 Feb 2024");
-    const [selectedCategory, setSelectedCategory] = useState("Category");
-    const [selectedStatus, setSelectedStatus] = useState("Order Status");
-
-    const dropdownData = [
-        {
-            label: selectedDate,
-            options: ["20 July 2024", "10 Oct 2024", "02 Nov 2024", "25 Dec 2024", "17 Jan 2025"],
-            onSelect: setSelectedDate,
-        },
-        {
-            label: selectedCategory,
-            options: ["Kurti", "Bottoms", "Maternity Wear", "Kurti Set", "Night Wear"],
-            onSelect: setSelectedCategory,
-        },
-        {
-            label: selectedStatus,
-            options: ["Delivered", "Pending", "Rejected"],
-            onSelect: setSelectedStatus,
-        },
-    ];
-
-    const handleReset = () => {
-        setSelectedDate("14 Feb 2024");
-        setSelectedCategory("Category");
-        setSelectedStatus("Order Status");
-    };
 
     return (
         <>
@@ -40,33 +14,12 @@ const OrderFilter = () => {
                     <ImFilter />
                 </li>
                 <li className="bg-white font-normal text-sm border-[1px] border-gray-300 rounded-xl p-1 w-24 h-12 flex items-center justify-center">Filter by</li>
-                {dropdownData.map(({ label, options, onSelect }, index) => (
-                    <li key={index} className='bg-white font-normal border-[1px] border-gray-300 rounded-xl p-1 w-40 h-12 flex items-center justify-center'>
-                        <Menu placement="bottom-end">
-                            <MenuHandler>
-                                <Button
-                                    className="p-0 cursor-pointer hover:shadow-none font-custom flex items-center gap-10 bg-transparent !text-secondary capitalize text-sm font-normal shadow-none"
-                                >
-                                    {label}
-                                    <ChevronDownIcon strokeWidth={2.5} className="h-4 w-4 transition-transform" />
-                                </Button>
-                            </MenuHandler>
-                            <MenuList>
-                                {options.map((option) => (
-                                    <MenuItem
-                                        key={option}
-                                        onClick={() => onSelect(option)}
-                                        className="font-custom"
-                                    >
-                                        {option}
-                                    </MenuItem>
-                                ))}
-                            </MenuList>
-                        </Menu>
-                    </li>
-                ))}
+                <li><FilterDate/></li>
+                <li><FilterCategory/></li>
+                <li><FilterOrderStatus/></li>
                 <li className="bg-white cursor-pointer font-normal text-sm border-[1px] border-gray-300 rounded-xl p-1 w-32 h-12 flex items-center justify-center gap-1
-                     text-red-500 hover:text-primary" onClick={handleReset}>
+                     text-red-500 hover:text-primary" 
+                     >
                     <PiArrowCounterClockwiseBold />
                     Reset Filter
                 </li>

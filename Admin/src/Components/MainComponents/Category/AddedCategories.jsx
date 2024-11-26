@@ -16,7 +16,7 @@ const AddedCategories = () => {
         {
             id: "2",
             category: "Kurti",
-            subCategories: ["Top $ Bottom Set", "Top, Bottom Dupatta Set",],
+            subCategories: ["Top & Bottom Set", "Top, Bottom Dupatta Set",],
         },
         {
             id: "3",

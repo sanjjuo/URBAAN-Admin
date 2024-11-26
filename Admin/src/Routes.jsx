@@ -10,11 +10,13 @@ import Invoice from './Components/MainComponents/Invoice/Invoice'
 import AddProduct from './Components/MainComponents/Products/AddProduct'
 import Category from './Components/MainComponents/Category/Category'
 import Products from './Components/MainComponents/Products/Products'
+import ScrollToTop from './ScrollToTop';
 
 const FullRoutes = () => {
     return (
         <>
             <Router>
+                <ScrollToTop />
                 <Routes>
                     <Route path='/' element={<Home />}>
                         <Route path='/' element={<Dashboard />} />

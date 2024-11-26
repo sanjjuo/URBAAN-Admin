@@ -5,8 +5,48 @@
   box-sizing: border-box;
 }
 
-/* Custom border style for ReactFlagsSelect */
-.react-flag-select {
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* day picker custom styles */
+
+.rdp-month_caption {
+  padding-left: 20px;
+  border-bottom: 1px solid #ededed;
+}
+
+.rdp-chevron {
+  display: inline-block;
+  fill: #202224 !important;
+  height: 20px !important;
+  width: 20px !important;
+  background-color: #ededed;
+  border-radius: 5px;
+}
+
+.rdp-caption_label {
+ font-size: 15px;
+ color: #202224;
+}
+
+.rdp-day_button {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.rdp-selected .rdp-day_button {
   border: none !important;
-  outline: none !important;
+  background-color: #C21E56 !important;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.rdp-today:not(.rdp-outside) {
+  color: #C21E56 !important;
 }

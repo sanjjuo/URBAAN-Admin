@@ -10,7 +10,7 @@ import "react-day-picker/style.css";
 import { format } from "date-fns";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
-export default function MonthMenu() {
+export default function FilterDate() {
     const [selectedDate, setSelectedDate] = useState([]);
 
     // Format the selected dates to display on the button
@@ -18,11 +18,11 @@ export default function MonthMenu() {
         ? selectedDate.slice(0, 3).map(date => format(date, "PP")).join(", ")
         : "14 Feb 2024";
     return (
-        <Menu placement="bottom-end">
+        <Menu>
             <MenuHandler>
                 <Button
-                    className="!bg-white text-gray-700 cursor-pointer flex items-center justify-between !w-64 p-3 font-custom capitalize text-xs font-normal
-                   border-gray-400 border-[1px] shadow-none focus:shadow-none focus:outline-none hover:shadow-none outline-none"
+                    className="!bg-white text-secondary rounded-xl cursor-pointer flex items-center gap-5 p-3 font-custom capitalize text-sm font-normal
+                   border-gray-300 border-[1px] shadow-none focus:shadow-none focus:outline-none hover:shadow-none outline-none"
                     style={{ width: 'fit-content', maxWidth: '150px' }}
                 >
                     <div className="flex gap-1 whitespace-nowrap">
@@ -35,7 +35,7 @@ export default function MonthMenu() {
                 </Button>
             </MenuHandler>
             <MenuList className="rounded-2xl p-0">
-                <div className="border-b-[1px] py-1 px-4 hover:outline-none focus:outline-none">
+            <div className="border-b-[1px] py-1 px-4 hover:outline-none focus:outline-none">
                     <DayPicker
                         mode="multiple"
                         selected={selectedDate}

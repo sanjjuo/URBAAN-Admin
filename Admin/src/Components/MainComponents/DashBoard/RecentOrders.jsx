@@ -5,7 +5,7 @@ import {
     CardBody,
     Chip,
 } from "@material-tailwind/react";
-import { MonthMenu } from './MonthMenu';
+import MonthMenu from './MonthMenu';
 
 const TABLE_HEAD = ["Product Name", "Location", "Date", "Piece", "Amount", "Status"];
 
