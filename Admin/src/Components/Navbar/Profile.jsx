@@ -45,14 +45,14 @@ const Profile = () => {
         <MenuList className='px-0 rounded-2xl shadow-md'>
           <MenuItem className='px-7'>
             <Typography variant="small" className="font-medium font-custom flex items-center gap-2 text-buttonBg">
-              <AiOutlineLogin />
+              <AiOutlineLogin  className='text-2xl'/>
               Log in
             </Typography>
           </MenuItem>
           <hr className="my-2 border-blue-gray-50" />
           <MenuItem className='px-7'>
             <Typography variant="small" className="font-medium font-custom flex items-center gap-2 text-deleteBg">
-              <AiOutlineLogout />
+              <AiOutlineLogout className='text-2xl'/>
               Log Out
             </Typography>
           </MenuItem>
