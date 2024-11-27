@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import {
     Menu,
@@ -17,6 +17,17 @@ const orderStatus = [
 
 export function FilterOrderStatus() {
     const [selectedStatus, setSelectedStatus] = useState("Order Status");
+
+    // Handle status selection
+    const handleOrderStatusSelect = (status) => {
+        setSelectedStatus(status);
+    };
+
+    // Prevent the click event from propagating to the Menu component
+    const handleClickInside = (event) => {
+        event.stopPropagation();
+    };
+
     return (
         <Menu>
             <MenuHandler>
@@ -36,12 +47,17 @@ export function FilterOrderStatus() {
             </MenuHandler>
             <MenuList className="rounded-2xl w-full max-w-lg p-0">
                 <div className="border-b-[1px] p-5 hover:outline-none focus:outline-none">
-                    <h1 className="text-secondary font-semibold text-base text-center">Select Category</h1>
+                    <h1 className="text-secondary font-semibold text-base text-center">Select Order Status</h1>
                     <ul className="mt-5 text-secondary flex flex-wrap justify-center items-center gap-2">
                         {orderStatus.map((status, index) => (
                             <li
                                 key={index}
-                                className="border-[1px] border-gray-400 text-xs w-[30%] p-2 flex justify-center items-center rounded-full"
+                                onClick={(e) => {
+                                    handleOrderStatusSelect(status);
+                                    handleClickInside(e);  // Prevent Menu from closing
+                                }}
+                                className="cursor-pointer border-[1px] border-gray-400 text-xs w-[30%] p-2 flex justify-center items-center 
+                                    rounded-full hover:bg-primary hover:text-white"
                             >
                                 {status}
                             </li>
@@ -49,7 +65,7 @@ export function FilterOrderStatus() {
                     </ul>
                 </div>
                 <div className='p-5 flex flex-col justify-center items-center gap-5 hover:outline-none focus:outline-none'>
-                    <p className="text-xs">*You can choose multiple categories</p>
+                    <p className="text-xs">*You can choose multiple order status</p>
                     <Button className="bg-primary font-custom capitalize text-xs py-2 px-4">
                         Apply now
                     </Button>

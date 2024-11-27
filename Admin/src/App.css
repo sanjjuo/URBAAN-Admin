@@ -24,10 +24,11 @@
 .rdp-chevron {
   display: inline-block;
   fill: #202224 !important;
-  height: 20px !important;
-  width: 20px !important;
+  height: 30px !important;
+  width: 30px !important;
   background-color: #ededed;
-  border-radius: 5px;
+  border-radius: 100%;
+  padding: 5px;
 }
 
 .rdp-caption_label {
@@ -49,4 +50,24 @@
 
 .rdp-today:not(.rdp-outside) {
   color: #C21E56 !important;
+}
+
+
+/* month picker styles */
+
+.react-datepicker__month-container {
+  padding: 10px;
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: transparent !important;
+  border-bottom: 1px solid #aeaeae;
+  border-top-left-radius: 0.3rem;
+  padding: 8px 0;
+  position: relative;
+}
+
+.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-top-right-radius: 0.3rem;
 }

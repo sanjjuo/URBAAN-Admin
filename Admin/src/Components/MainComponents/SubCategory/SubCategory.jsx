@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { IoIosSearch } from 'react-icons/io'
 import CreateSubCategories from './CreateSubCategories'
 import AddedSubCategories from './AddedSubCategories'
+import EditSubCategories from './EditSubCategories'
 
 const SubCategory = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [createEditSub, setCreateEditSub] = useState("createSub")
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -19,7 +21,17 @@ const SubCategory = () => {
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-10 mt-5">
 
         <div className="lg:col-span-2">
-          <CreateSubCategories selectedImage={selectedImage} handleImageUpload={handleImageUpload} />
+          {
+            createEditSub === "createSub" ? (
+              <>
+                <CreateSubCategories selectedImage={selectedImage} handleImageUpload={handleImageUpload} />
+              </>
+            ) : (
+              <>
+                <EditSubCategories selectedImage={selectedImage} handleImageUpload={handleImageUpload} />
+              </>
+            )
+          }
         </div>
 
         <div className="lg:col-span-4 space-y-5">
@@ -36,7 +48,7 @@ const SubCategory = () => {
 
           {/* Added Sub Categories */}
           <div>
-            <AddedSubCategories />
+            <AddedSubCategories createEditSub={createEditSub} setCreateEditSub={setCreateEditSub}/>
           </div>
         </div>
       </div>

@@ -17,8 +17,15 @@ export default function FilterDate() {
     const formattedDates = selectedDate.length > 0
         ? selectedDate.slice(0, 3).map(date => format(date, "PP")).join(", ")
         : "14 Feb 2024";
+
+    const handleDateSelect = (date) => {
+        setSelectedDate(date);
+        // Prevent the menu from closing when a date is selected
+        event.stopPropagation();
+    };
+
     return (
-        <Menu>
+        <Menu closeOnClick={false}>
             <MenuHandler>
                 <Button
                     className="!bg-white text-secondary rounded-xl cursor-pointer flex items-center gap-5 p-3 font-custom capitalize text-sm font-normal
@@ -35,23 +42,24 @@ export default function FilterDate() {
                 </Button>
             </MenuHandler>
             <MenuList className="rounded-2xl p-0">
-            <div className="border-b-[1px] py-1 px-4 hover:outline-none focus:outline-none">
+                <div className="border-b-[1px] py-1 px-4 hover:outline-none focus:outline-none">
                     <DayPicker
                         mode="multiple"
                         selected={selectedDate}
-                        onSelect={setSelectedDate}
+                        onSelect={handleDateSelect}
                         styles={{
                             root: { fontSize: '0.875rem' }, // Smaller text size
                             day: { padding: '0.25rem' },    // Reduce day button size
                             month: { padding: '0rem' },  // Reduce padding inside the month view
-                        }} classNames={{
+                        }} 
+                        classNames={{
                             caption: 'text-xs font-semibold', // Smaller caption text
                             day: 'p-1 text-xs hover:bg-gray-200 focus:bg-primary', // Adjust day styles
                         }}
                     />
                 </div>
                 <div className='p-4 flex flex-col justify-center items-center gap-5 hover:outline-none focus:outline-none'>
-                    <p className="text-xs">*You can choose multiple categories</p>
+                    <p className="text-xs">*You can choose multiple dates</p>
                     <Button className="bg-primary font-custom capitalize text-xs py-2 px-4">
                         Apply now
                     </Button>

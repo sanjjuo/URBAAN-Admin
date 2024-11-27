@@ -1,32 +1,50 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import {
     Menu,
     MenuHandler,
     MenuList,
     Button,
+    MenuItem,
 } from "@material-tailwind/react";
-import { DayPicker } from "react-day-picker";
-import "react-day-picker/style.css";
-import { format } from "date-fns";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+
+const months = [
+    "All",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+];
+
 
 export default function MonthMenu() {
-    const [selectedDate, setSelectedDate] = useState([]);
+    const [selectedMonth, setSelectedMonth] = useState("Month");
 
-    // Format the selected dates to display on the button
-    const formattedDates = selectedDate.length > 0
-        ? selectedDate.slice(0, 3).map(date => format(date, "PP")).join(", ")
-        : "14 Feb 2024";
+    // Handle status selection
+    const handleOrderStatusSelect = (month) => {
+        setSelectedMonth(month);
+    };
+
+    // Prevent the click event from propagating to the Menu component
+    const handleClickInside = (event) => {
+        event.stopPropagation();
+    };
     return (
-        <Menu placement="bottom-end">
+        <Menu placement='bottom-end' closeOnClick={false}>
             <MenuHandler>
-                <Button
-                    className="!bg-white text-gray-700 cursor-pointer flex items-center justify-between !w-64 p-3 font-custom capitalize text-xs font-normal
-                   border-gray-400 border-[1px] shadow-none focus:shadow-none focus:outline-none hover:shadow-none outline-none"
-                    style={{ width: 'fit-content', maxWidth: '150px' }}
-                >
+                <Button className="cursor-pointer flex items-center justify-between !w-64 font-custom bg-transparent text-gray-700 capitalize text-xs font-normal
+                border-gray-400 border-[1px] shadow-none rounded-md p-3 focus:shadow-none focus:outline-none hover:shadow-none outline-none"
+                    style={{ width: 'fit-content', maxWidth: '150px' }}>
                     <div className="flex gap-1 whitespace-nowrap">
-                        {formattedDates}
+                        {selectedMonth}
                     </div>
                     <ChevronDownIcon
                         strokeWidth={2.5}
@@ -34,28 +52,18 @@ export default function MonthMenu() {
                     />
                 </Button>
             </MenuHandler>
-            <MenuList className="rounded-2xl p-0">
-                <div className="border-b-[1px] py-1 px-4 hover:outline-none focus:outline-none">
-                    <DayPicker
-                        mode="multiple"
-                        selected={selectedDate}
-                        onSelect={setSelectedDate}
-                        styles={{
-                            root: { fontSize: '0.875rem' }, // Smaller text size
-                            day: { padding: '0.25rem' },    // Reduce day button size
-                            month: { padding: '0rem' },  // Reduce padding inside the month view
-                        }} classNames={{
-                            caption: 'text-xs font-semibold', // Smaller caption text
-                            day: 'p-1 text-xs hover:bg-gray-200 focus:bg-primary', // Adjust day styles
-                        }}
-                    />
-                </div>
-                <div className='p-4 flex flex-col justify-center items-center gap-5 hover:outline-none focus:outline-none'>
-                    <p className="text-xs">*You can choose multiple categories</p>
-                    <Button className="bg-primary font-custom capitalize text-xs py-2 px-4">
-                        Apply now
-                    </Button>
-                </div>
+            <MenuList
+                className="rounded-2xl p-0 max-h-40 overflow-y-scroll"
+                style={{ width: "fit-content" }}
+            >
+                {months.map((month, index) => (
+                    <MenuItem className='font-custom text-xs' key={index} onClick={(e) => {
+                        handleOrderStatusSelect(month);
+                        handleClickInside(e);
+                    }}>
+                        {month}
+                    </MenuItem>
+                ))}
             </MenuList>
         </Menu>
     );

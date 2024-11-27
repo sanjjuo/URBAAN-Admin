@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
-import { Button, Card, CardFooter, Chip, IconButton, Typography } from "@material-tailwind/react";
+import { Button, Card, CardFooter, Chip, IconButton, Menu, MenuHandler, MenuItem, MenuList, Typography } from "@material-tailwind/react";
 import { AppContext } from '../../../StoreContext/StoreContext';
 import { DeleteModal } from '../../DeleteModal/DeleteModal';
+import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import { Link } from 'react-router-dom';
 
 const TABLE_HEAD = ["user name", "mobile", "address", "city", "district", "state", "pincode", "Action"];
 
@@ -46,7 +48,6 @@ const TABLE_ROWS = [
 
 
 const UsersListTable = () => {
-    const { open, handleOpen } = useContext(AppContext)
     return (
         <>
             <Card className="h-full w-full shadow-none bg-transparent">
@@ -132,16 +133,22 @@ const UsersListTable = () => {
                                         </Typography>
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-xs">
-                                            <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
-                                            hover:bg-buttonBg hover:text-editBg">
-                                                Edit
-                                            </button>
-                                            <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
-                                            hover:bg-primary hover:text-white">
-                                                Delete
-                                            </button>
-                                        </div>
+                                        <Menu>
+                                            <MenuHandler>
+                                                <IconButton variant="text">
+                                                    <HiOutlineDotsHorizontal className='text-primary text-2xl cursor-pointer' />
+                                                </IconButton>
+                                            </MenuHandler>
+                                            <MenuList>
+                                                <Link to='/userDetails'>
+                                                    <MenuItem className='font-custom text-buttonBg hover:!bg-buttonBg hover:!text-white'>View</MenuItem>
+                                                </Link>
+                                                <MenuItem className='font-custom text-processingBg hover:!bg-processingBg hover:!text-white'>
+                                                    Suspend</MenuItem>
+                                                <MenuItem className='font-custom text-primary hover:!bg-primary hover:!text-white'>
+                                                    Delete</MenuItem>
+                                            </MenuList>
+                                        </Menu>
                                     </td>
                                 </tr>
                             );
@@ -182,7 +189,6 @@ const UsersListTable = () => {
                     </Button>
                 </CardFooter>
             </Card>
-            <DeleteModal open={open} handleOpen={handleOpen} />
         </>
     )
 }

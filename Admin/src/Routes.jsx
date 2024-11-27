@@ -11,6 +11,7 @@ import AddProduct from './Components/MainComponents/Products/AddProduct'
 import Category from './Components/MainComponents/Category/Category'
 import Products from './Components/MainComponents/Products/Products'
 import ScrollToTop from './ScrollToTop';
+import ViewUserDetails from './Components/MainComponents/UsersList/ViewUserManagement';
 
 const FullRoutes = () => {
     return (
@@ -28,6 +29,7 @@ const FullRoutes = () => {
                         <Route path='userslist' element={<UsersList />} />
                         <Route path='invoice' element={<Invoice />} />
                         <Route path='addProduct' element={<AddProduct />} />
+                        <Route path='userDetails' element={<ViewUserDetails/>}/>
                     </Route>
                 </Routes>
             </Router>

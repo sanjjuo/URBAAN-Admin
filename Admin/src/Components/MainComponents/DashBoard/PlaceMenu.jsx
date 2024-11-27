@@ -8,6 +8,8 @@ import {
 } from "@material-tailwind/react";
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
+const places = ["All","Kerala", "Tamil Nadu", "Banglore", "Delhi", "Mumbai", "Chennai", "Goa", "Hyderabad" ,"Manali", "Pune"]
+
 export function PlaceMenu() {
     const [selectedPlace, setSelectedPlace] = useState("Place"); // Track selected place
 
@@ -29,8 +31,11 @@ export function PlaceMenu() {
                     />
                 </Button>
             </MenuHandler>
-            <MenuList>
-                {["Kerala", "Tamil Nadu", "Banglore", "Delhi", "Mumbai"].map((place) => (
+            <MenuList
+                className="rounded-2xl p-0 max-h-40 overflow-y-scroll"
+                style={{ width: "fit-content" }}
+            >
+                {places.map((place) => (
                     <MenuItem 
                         key={place}
                         onClick={() => handleMenuItemClick(place)} 

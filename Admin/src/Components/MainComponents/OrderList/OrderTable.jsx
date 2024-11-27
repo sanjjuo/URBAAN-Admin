@@ -59,14 +59,14 @@ const TABLE_ROWS = [
 const OrderTable = () => {
   return (
     <>
-      <Card className="h-full w-full shadow-none bg-transparent">
-        <table className="w-full min-w-max table-auto text-left">
+      <Card className="w-full shadow-none bg-transparent">
+        <table className="w-full table-auto text-left border-collapse">
           <thead>
             <tr className='bg-white'>
               {TABLE_HEAD.map((head) => (
                 <th
                   key={head}
-                  className="border-b border-blue-gray-100 p-4"
+                  className="border-b border-blue-gray-100 p-4 text-center"
                 >
                   <Typography
                     variant="small"
@@ -81,7 +81,7 @@ const OrderTable = () => {
           <tbody>
             {TABLE_ROWS.map((item, index) => {
               const isLast = index === TABLE_ROWS.length - 1;
-              const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
+              const classes = isLast ? "p-4 text-center" : "p-4 border-b border-gray-300 text-center";
 
               return (
                 <tr key={index}>
@@ -143,22 +143,20 @@ const OrderTable = () => {
                   </td>
                   <td className={classes}>
                     <Chip
-                      className={`
-                    ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-xs text-center font-normal" : ""}
-                    ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-xs text-center font-normal" : ""}
-                    ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-xs text-center font-normal" : ""}
-                    ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
-                    ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-xs text-center font-normal" : ""}
-                    ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
-                  `}
-                      value={
-                        item.status === "delivered" ? "Delivered" :
-                          item.status === "processing" ? "Processing" :
-                            item.status === "cancelled" ? "Cancelled" :
-                              item.status === "pending" ? "Pending" :
-                                item.status === "shipped" ? "Shipped" : "Unknown"
-                      }
-
+                      className={`capitalize text-xs text-center font-normal ${
+                        item.status === "delivered"
+                          ? "text-deliveredBg bg-deliveredBg/20"
+                          : item.status === "processing"
+                          ? "text-processingBg bg-processingBg/20"
+                          : item.status === "cancelled"
+                          ? "text-cancelBg bg-cancelBg/20"
+                          : item.status === "pending"
+                          ? "text-pendingBg bg-pendingBg/20"
+                          : item.status === "shipped"
+                          ? "text-shippedBg bg-shippedBg/20"
+                          : "text-gray-500 bg-gray-200"
+                      }`}
+                      value={item.status}
                     />
                   </td>
                 </tr>

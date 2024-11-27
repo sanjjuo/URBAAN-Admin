@@ -54,13 +54,13 @@ const CouponsTable = () => {
     return (
         <>
             <Card className="h-full w-full shadow-none bg-transparent">
-                <table className="w-full min-w-max table-auto text-left">
+                <table className="w-full table-auto text-left border-collapse">
                     <thead>
                         <tr className='bg-white'>
                             {TABLE_HEAD.map((head) => (
                                 <th
                                     key={head}
-                                    className="border-b border-blue-gray-100 p-4"
+                                    className="border-b border-gray-300 p-4 text-center"
                                 >
                                     <Typography
                                         variant="small"
@@ -75,7 +75,9 @@ const CouponsTable = () => {
                     <tbody>
                         {TABLE_ROWS.map((item, index) => {
                             const isLast = index === TABLE_ROWS.length - 1;
-                            const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
+                            const classes = isLast
+                                ? "p-4 text-center"
+                                : "p-4 border-b border-gray-300 text-center";
 
                             return (
                                 <tr key={index}>
@@ -134,13 +136,13 @@ const CouponsTable = () => {
                                         />
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-xs">
+                                        <div className="flex justify-center gap-2 text-xs">
                                             <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-buttonBg hover:text-editBg">
+                                                hover:bg-buttonBg hover:text-editBg">
                                                 Edit
                                             </button>
-                                            <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-primary hover:text-white">
+                                            <button onClick={() => handleOpen("deleteModal")} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
+                                            hover:bg-primary hover:text-white">
                                                 Delete
                                             </button>
                                         </div>
@@ -184,7 +186,12 @@ const CouponsTable = () => {
                     </Button>
                 </CardFooter>
             </Card>
-            <DeleteModal open={open} handleOpen={handleOpen} />
+            <DeleteModal
+                open={open === "deleteModal"}
+                handleOpen={handleOpen}
+                title="Are you sure ?"
+                description="Do you really want to delete this item? This action cannot be undone."
+            />
         </>
     )
 }

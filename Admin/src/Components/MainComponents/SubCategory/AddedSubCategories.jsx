@@ -33,18 +33,18 @@ const TABLE_ROWS = [
     },
 ];
 
-const AddedSubCategories = () => {
+const AddedSubCategories = ({ createEditSub, setCreateEditSub }) => {
     const { open, handleOpen } = useContext(AppContext)
     return (
         <>
-            <Card className="h-full w-full shadow-none bg-transparent">
-                <table className="w-full min-w-max table-auto text-left">
+            <Card className=" w-full shadow-none bg-transparent">
+                <table className="w-full table-auto text-left border-collapse">
                     <thead className='bg-white bg-transparent'>
                         <tr className='bg-white'>
                             {TABLE_HEAD.map((head) => (
                                 <th
                                     key={head}
-                                    className="border-b border-blue-gray-100 p-4 w-40"
+                                    className="border-b border-gray-300 p-4 text-center"
                                 >
                                     <Typography
                                         variant="small"
@@ -60,8 +60,9 @@ const AddedSubCategories = () => {
                     <tbody className='bg-transparent'>
                         {TABLE_ROWS.map((item, index) => {
                             const isLast = index === TABLE_ROWS.length - 1;
-                            const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
-
+                            const classes = isLast
+                                ? "p-4 text-center"
+                                : "p-4 border-b border-gray-300 text-center";
                             return (
                                 <tr key={index} className="bg-transparent">
                                     <td className={classes}>
@@ -95,13 +96,15 @@ const AddedSubCategories = () => {
                                         </Typography>
                                     </td>
                                     <td className={classes}>
-                                        <div className="flex gap-2 text-xs">
-                                            <button className="text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-buttonBg hover:text-editBg">
+                                        <div className="flex justify-center gap-2 text-xs">
+                                            <button
+                                                onClick={() => setCreateEditSub("editSub")}
+                                                className={`text-buttonBg bg-editBg w-14 h-7 flex justify-center items-center rounded-md hover:bg-buttonBg 
+                                                    hover:text-editBg ${createEditSub === "editSub" ? "!bg-buttonBg text-editBg" : ""}`}>
                                                 Edit
                                             </button>
-                                            <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
-                                 hover:bg-primary hover:text-white">
+                                            <button onClick={()=>handleOpen("deleteModal")} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
+                                            hover:bg-primary hover:text-white">
                                                 Delete
                                             </button>
                                         </div>
@@ -145,7 +148,12 @@ const AddedSubCategories = () => {
                     </Button>
                 </CardFooter>
             </Card>
-            <DeleteModal open={open} handleOpen={handleOpen} />
+            <DeleteModal
+                open={open === "deleteModal"}
+                handleOpen={handleOpen}
+                title="Are you sure ?"
+                description="Do you really want to delete this item? This action cannot be undone."
+            />
         </>
     )
 }

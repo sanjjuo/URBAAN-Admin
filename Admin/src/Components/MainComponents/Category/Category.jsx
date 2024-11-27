@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import CreateCategories from './CreateCategories';
 import AddedCategories from './AddedCategories';
+import EditCategories from './EditCategories';
 
 const Category = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [createEdit, setCreateEdit] = useState("create")
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -21,10 +23,23 @@ const Category = () => {
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-10 mt-5">
         {/* Create Categories Section */}
         <div className="lg:col-span-2">
-          <CreateCategories
-            selectedImage={selectedImage}
-            handleImageUpload={handleImageUpload}
-          />
+          {
+            createEdit === "create" ? (
+              <>
+                <CreateCategories
+                  selectedImage={selectedImage}
+                  handleImageUpload={handleImageUpload}
+                />
+              </>
+            )
+              : (
+                <>
+                  <EditCategories
+                    selectedImage={selectedImage}
+                    handleImageUpload={handleImageUpload} />
+                </>
+              )
+          }
         </div>
 
         {/* Search and Added Categories Section */}
@@ -42,7 +57,7 @@ const Category = () => {
 
           {/* Added Categories */}
           <div className="grid lg:grid-cols-2 gap-5">
-            <AddedCategories />
+            <AddedCategories createEdit={createEdit} setCreateEdit={setCreateEdit} />
           </div>
         </div>
       </div>

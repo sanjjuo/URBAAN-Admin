@@ -42,7 +42,7 @@ const ORDERS = [
 const RecentOrders = () => {
     return (
         <>
-            <Card className="h-full w-full p-10">
+            <Card className="w-full p-10">
                 <div>
                     <ul className='flex items-center justify-between'>
                         <li className="text-2xl font-medium text-secondary">Recent Orders</li>
@@ -50,17 +50,17 @@ const RecentOrders = () => {
                     </ul>
                 </div>
                 <CardBody className="p-0 mt-10">
-                    <table className="mt-0 w-full min-w-max table-auto text-left shadow-none border-none">
+                    <table className="w-full table-auto text-left border-collapse">
                         <thead className='bg-quaternary'>
                             <tr>
                                 {TABLE_HEAD.map((head) => (
                                     <th
                                         key={head}
-                                        className="p-4"
+                                        className="border-b border-gray-300 p-4 text-center"
                                     >
                                         <Typography
                                             variant="small"
-                                            className="leading-none uppercase font-custom text-sm font-semibold text-secondary"
+                                            className="font-semibold font-custom text-secondary text-sm uppercase"
                                         >
                                             {head}
                                         </Typography>
@@ -73,8 +73,8 @@ const RecentOrders = () => {
                                 (item, index) => {
                                     const isLast = index === ORDERS.length - 1;
                                     const classes = isLast
-                                        ? "p-4"
-                                        : "p-4 border-b border-gray-300"
+                                        ? "p-4 text-center"
+                                        : "p-4 border-b border-gray-300 text-center";
 
                                     return (
                                         <tr key={index}>
@@ -124,21 +124,21 @@ const RecentOrders = () => {
                                                 </Typography>
                                             </td>
                                             <td className={classes}>
-                                                    <Chip
-                                                        className={`
-                                                            ${item.status === "delivered" ? "text-deliveredBg bg-deliveredBg/20 capitalize text-xs text-center font-normal" : ""}
-                                                            ${item.status === "processing" ? "text-processingBg bg-processingBg/20 capitalize text-xs text-center font-normal" : ""}
-                                                            ${item.status === "cancelled" ? "text-cancelBg bg-cancelBg/20 capitalize text-xs text-center font-normal" : ""}
-                                                            ${item.status === "shipped" ? "text-shippedBg bg-shippedBg/20 capitalize text-xs text-center font-normal" : ""}
-                                                            ${item.status === "pending" ? "text-pendingBg bg-pendingBg/20 capitalize text-xs text-center font-normal" : ""}
-                                                            ${!["delivered", "processing", "cancelled", "shipped", "pending"].includes(item.status) ? "text-gray-500 bg-gray-200 capitalize text-xs text-center font-normal" : ""}
-                                                          `}
-                                                        value={
-                                                            item.status === "delivered" ? "Delivered" :
-                                                            item.status === "pending" ? "Pending" :
-                                                            item.status === "cancelled" ? "Cancelled" : "Unknown"
-                                                        }
-                                                    />
+                                                <Chip
+                                                    className={`capitalize text-xs text-center font-normal ${item.status === "delivered"
+                                                            ? "text-deliveredBg bg-deliveredBg/20"
+                                                            : item.status === "processing"
+                                                                ? "text-processingBg bg-processingBg/20"
+                                                                : item.status === "cancelled"
+                                                                    ? "text-cancelBg bg-cancelBg/20"
+                                                                    : item.status === "pending"
+                                                                        ? "text-pendingBg bg-pendingBg/20"
+                                                                        : item.status === "shipped"
+                                                                            ? "text-shippedBg bg-shippedBg/20"
+                                                                            : "text-gray-500 bg-gray-200"
+                                                        }`}
+                                                    value={item.status}
+                                                />
                                             </td>
                                         </tr>
                                     );

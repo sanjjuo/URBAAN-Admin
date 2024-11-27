@@ -144,7 +144,7 @@ const InvoiceTable = () => {
                                             hover:bg-buttonBg hover:text-editBg">
                                                 Edit
                                             </button>
-                                            <button onClick={handleOpen} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
+                                            <button onClick={()=>handleOpen("deleteModal")} className="text-deleteBg bg-primary/20 w-14 h-7 flex justify-center items-center rounded-md
                                             hover:bg-primary hover:text-white">
                                                 Delete
                                             </button>
@@ -189,7 +189,12 @@ const InvoiceTable = () => {
                     </Button>
                 </CardFooter>
             </Card>
-            <DeleteModal open={open} handleOpen={handleOpen} />
+            <DeleteModal
+                open={open === "deleteModal"}
+                handleOpen={handleOpen}
+                title="Are you sure ?"
+                description="Do you really want to delete this item? This action cannot be undone."
+            />
         </>
     )
 }

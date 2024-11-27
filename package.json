@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "react-datepicker": "^7.5.0",
+    "react-lite-month-picker": "^1.2.19",
+    "react-month-picker": "^2.2.1"
+  }
+}

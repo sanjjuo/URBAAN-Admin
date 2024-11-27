@@ -57,13 +57,15 @@ const GridView = () => {
                     {
                         product.map((item, index) => (
                             <Card className="w-full cursor-default group" key={index}>
-                                <CardHeader shadow={false} floated={false} className="h-64 overflow-hidden">
+                                <CardHeader shadow={false} floated={false} className="h-64 overflow-hidden relative">
                                     <img
                                         src={item.img}
                                         alt="card-image"
                                         className="h-full w-full object-cover rounded-xl transition transform scale-100 duration-500 ease-in-out
                                             group-hover:scale-110"
                                     />
+                                    <p className='absolute bottom-2 right-2 text-xs text-secondary bg-quaternary py-1 px-3 rounded-full
+                                     hover:bg-secondary hover:text-quaternary cursor-pointer'>Edit Product</p>
                                 </CardHeader>
                                 <CardBody className='p-4'>
                                     <div className="mb-2 flex items-center justify-between">

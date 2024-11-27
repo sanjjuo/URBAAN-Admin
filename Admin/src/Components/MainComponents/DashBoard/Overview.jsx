@@ -12,7 +12,7 @@ const Overview = () => {
                             <span className='text-gray-700 text-sm'>Total Customers</span>
                             <span className='text-secondary text-2xl font-semibold'>40,689</span>
                         </li>
-                        <li className='w-[45px] h-[45px] bg-O1/30 p-2 rounded-2xl'>
+                        <li className='w-[50px] h-[50px] bg-O1/30 p-3 rounded-2xl'>
                             <img src="/group.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
@@ -25,7 +25,7 @@ const Overview = () => {
                             <span className='text-gray-700 text-sm'>Total Orders</span>
                             <span className='text-secondary text-2xl font-semibold'>40,689</span>
                         </li>
-                        <li className='w-[45px] h-[45px] bg-O2/30 p-2 rounded-2xl'>
+                        <li className='w-[50px] h-[50px] bg-O2/30 p-3 rounded-2xl'>
                             <img src="/box.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
@@ -38,7 +38,7 @@ const Overview = () => {
                             <span className='text-gray-700 text-sm'>Recent Orders</span>
                             <span className='text-secondary text-2xl font-semibold'>40,689</span>
                         </li>
-                        <li className='w-[45px] h-[45px] bg-O2/30 p-2 rounded-2xl'>
+                        <li className='w-[50px] h-[50px] bg-O2/30 p-3 rounded-2xl'>
                             <img src="/box.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
@@ -51,7 +51,7 @@ const Overview = () => {
                             <span className='text-gray-700 text-sm'>Total Earnings</span>
                             <span className='text-secondary text-2xl font-semibold'>40,689</span>
                         </li>
-                        <li className='w-[45px] h-[45px] bg-O3/30 p-2 rounded-2xl'>
+                        <li className='w-[50px] h-[50px] bg-O3/30 p-3 rounded-2xl'>
                             <img src="/chart.png" alt="" className='w-full h-full object-contain' />
                         </li>
                     </ul>
